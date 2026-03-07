@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="impact_africa_header" inherit_id="website.layout" name="Impact Africa Header">
+        <xpath expr="//header" position="replace">
+            <header t-if="not no_header">
+                <nav id="nav">
+                    <a class="logo" href="/">
+                        <img src="/theme_impact_africa/static/src/img/Logo.svg" class="logo-image" alt="Impact Africa"/>
+                    </a>
+                    <ul class="nav-links">
+                        <li><a href="/" t-attf-class="#{'active' if request.httprequest.path == '/' else ''}">Accueil</a></li>
+                        <li><a href="/about" t-attf-class="#{'active' if request.httprequest.path == '/about' else ''}">À propos</a></li>
+                        <li><a href="/services" t-attf-class="#{'active' if request.httprequest.path == '/services' else ''}">Services</a></li>
+                        <li><a href="/partenaires" t-attf-class="#{'active' if request.httprequest.path == '/partenaires' else ''}">Partenaires</a></li>
+                        <li><a href="/blog" t-attf-class="#{'active' if request.httprequest.path.startswith('/blog') else ''}">Blog</a></li>
+                        <li><a href="/contact" t-attf-class="#{'active' if request.httprequest.path == '/contact' else ''}">Contact</a></li>
+                    </ul>
+                    <ul class="nav-right">
+                        <t t-if="user_id._is_public()">
+                            <li>
+                                <a href="/web/login?redirect=/" class="hdr-btn hdr-account-link" aria-label="Compte">
+                                    <iconify-icon icon="mdi:account-outline"></iconify-icon>
+                                    <span>Connexion</span>
+                                </a>
+                            </li>
+                        </t>
+                        <t t-call="portal.user_dropdown">
+                            <t t-set="_user_name" t-value="false"/>
+                            <t t-set="_avatar" t-value="true"/>
+                            <t t-set="_avatar_class" t-valuef="hdr-user-avatar"/>
+                            <t t-set="_no_caret" t-value="true"/>
+                            <t t-set="_item_class" t-valuef="hdr-user dropdown"/>
+                            <t t-set="_link_class" t-valuef="hdr-user-link"/>
+                            <t t-set="_user_name_class" t-valuef="small"/>
+                            <t t-set="_dropdown_menu_class" t-valuef="dropdown-menu dropdown-menu-end hdr-user-menu"/>
+                        </t>
+                        <li>
+                            <a href="/contact" class="nav-btn"><iconify-icon icon="mdi:file-document-edit-outline"></iconify-icon>Devis</a>
+                        </li>
+                        <li>
+                            <button class="hbg" id="hbgBtn" onclick="toggleDrawer()"><span></span><span></span><span></span></button>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+                <div class="drawer" id="drawer">
+                    <div class="drawer-header">
+                        <a class="logo" href="/" onclick="closeDrawer()">
+                            <img src="/theme_impact_africa/static/src/img/Logo_dark.svg" class="logo-image" alt="Impact Africa"/>
+                        </a>
+                        <button class="drawer-close" onclick="closeDrawer()"><iconify-icon icon="mdi:close"></iconify-icon></button>
+                    </div>
+                    <ul class="drawer-links">
+                        <li><a href="/" t-attf-class="#{'active' if request.httprequest.path == '/' else ''}" onclick="closeDrawer()"><iconify-icon icon="mdi:home-outline"></iconify-icon>Accueil</a></li>
+                        <li><a href="/about" t-attf-class="#{'active' if request.httprequest.path == '/about' else ''}" onclick="closeDrawer()"><iconify-icon icon="mdi:information-outline"></iconify-icon>À propos</a></li>
+                        <li><a href="/services" t-attf-class="#{'active' if request.httprequest.path == '/services' else ''}" onclick="closeDrawer()"><iconify-icon icon="mdi:tools"></iconify-icon>Services</a></li>
+                        <li><a href="/partenaires" t-attf-class="#{'active' if request.httprequest.path == '/partenaires' else ''}" onclick="closeDrawer()"><iconify-icon icon="mdi:handshake-outline"></iconify-icon>Partenaires</a></li>
+                        <li><a href="/blog" t-attf-class="#{'active' if request.httprequest.path.startswith('/blog') else ''}" onclick="closeDrawer()"><iconify-icon icon="mdi:newspaper-variant-outline"></iconify-icon>Blog</a></li>
+                        <li><a href="/contact" t-attf-class="#{'active' if request.httprequest.path == '/contact' else ''}" onclick="closeDrawer()"><iconify-icon icon="mdi:phone-outline"></iconify-icon>Contact</a></li>
+                    </ul>
+                    <div class="drawer-footer">
+                        <t t-if="user_id._is_public()">
+                            <a href="/web/login?redirect=/" class="drawer-login-btn" onclick="closeDrawer()"><iconify-icon icon="mdi:account-circle-outline"></iconify-icon>Se connecter</a>
+                        </t>
+                        <t t-else="">
+                            <a href="/my/home" class="drawer-login-btn" onclick="closeDrawer()"><iconify-icon icon="mdi:account-circle-outline"></iconify-icon>Mon compte</a>
+                        </t>
+                        <a href="/contact" class="drawer-devis-btn" onclick="closeDrawer()"><iconify-icon icon="mdi:file-document-edit-outline"></iconify-icon>Demander un devis</a>
+                        <div class="drawer-contact"><iconify-icon icon="mdi:phone-outline"></iconify-icon>+221 78 237 88 88</div>
+                    </div>
+                </div>
+            </header>
+        </xpath>
+    </template>
+</odoo>

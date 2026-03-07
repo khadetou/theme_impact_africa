@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="page_services" model="website.page">
+        <field name="name">Services</field>
+        <field name="type">qweb</field>
+        <field name="url">/services</field>
+        <field name="website_published">True</field>
+        <field name="arch" type="xml">
+            <t t-name="theme_impact_africa.services_page">
+                <t t-call="website.layout">
+                    <t t-set="pageName" t-value="'impact-africa-services'"/>
+                    <t t-set="title" t-value="'Services — Impact Africa'"/>
+                    <t t-set="head">
+                        <t t-call-assets="theme_impact_africa.assets_services" t-js="false"/>
+                    </t>
+                    <div id="wrap" class="oe_structure">
+                        <div class="page-hero">
+                          <div class="ph-tag"><div class="ph-tag-line"></div><span class="ph-tag-text">Ce que nous faisons</span></div>
+                          <h1 class="ph-title">Nos <em>services</em><br />professionnels</h1>
+                          <p class="ph-desc">De la vente de matériaux au conseil technique, Impact Africa vous accompagne à chaque étape de vos projets de menuiserie aluminium à Dakar.</p>
+                          <div class="ph-bg">SVC</div>
+                        </div>
+
+                        <!-- SERVICES LISTE -->
+                        <section class="svc-main">
+                          <div class="rv"><div class="stag"><div class="stag-dot"></div><span>Nos prestations</span></div>
+                          <h2 class="stitle">Un accompagnement <em>complet</em><br />pour les professionnels</h2></div>
+                          <div class="svc-big-grid">
+                            <div class="svc-sidebar rv">
+                              <h3>L'expertise<br />au cœur de<br /><em>chaque projet</em></h3>
+                              <p>Impact Africa accompagne menuisiers, poseurs et entreprises avec des solutions techniques complètes et un conseil de proximité basé à Dakar.</p>
+                              <a href="/contact" class="svc-cta">Prendre contact →</a>
+                            </div>
+                            <div class="svc-list">
+                              <div class="svc-item rv">
+                                <div class="svc-num">01</div>
+                                <div class="svc-icon-wrap"><iconify-icon icon="mdi:package-variant-closed"></iconify-icon></div>
+                                <div class="svc-body"><div class="svc-name">Vente de matériaux &amp; accessoires</div><div class="svc-desc">Profilés aluminium, quincaillerie, joints, galets — tout le nécessaire pour vos chantiers disponible en stock à Dakar.</div></div>
+                              </div>
+                              <div class="svc-item rv d1">
+                                <div class="svc-num">02</div>
+                                <div class="svc-icon-wrap"><iconify-icon icon="mdi:file-document-edit-outline"></iconify-icon></div>
+                                <div class="svc-body"><div class="svc-name">Devis personnalisé &amp; chiffrage rapide</div><div class="svc-desc">Réponse sous 24h avec devis détaillé adapté à vos quantités, spécifications techniques et budget de chantier.</div></div>
+                              </div>
+                              <div class="svc-item rv d2">
+                                <div class="svc-num">03</div>
+                                <div class="svc-icon-wrap"><iconify-icon icon="mdi:lightbulb-on-outline"></iconify-icon></div>
+                                <div class="svc-body"><div class="svc-name">Conseil technique expert</div><div class="svc-desc">Notre équipe vous oriente vers les bons profils, les bons joints et les bons accessoires selon votre type de projet et votre environnement.</div></div>
+                              </div>
+                              <div class="svc-item rv d3">
+                                <div class="svc-num">04</div>
+                                <div class="svc-icon-wrap"><iconify-icon icon="mdi:truck-delivery-outline"></iconify-icon></div>
+                                <div class="svc-body"><div class="svc-name">Livraison express sur Dakar</div><div class="svc-desc">Service de livraison dédié sur tout Dakar et la région. Commandes urgentes honorées en 24h pour ne jamais bloquer votre chantier.</div></div>
+                              </div>
+                              <div class="svc-item rv d4">
+                                <div class="svc-num">05</div>
+                                <div class="svc-icon-wrap"><iconify-icon icon="mdi:account-star-outline"></iconify-icon></div>
+                                <div class="svc-body"><div class="svc-name">Compte professionnel dédié</div><div class="svc-desc">Accès à des tarifs préférentiels, conditions de paiement adaptées et un interlocuteur dédié pour les artisans et entreprises.</div></div>
+                              </div>
+                              <div class="svc-item rv">
+                                <div class="svc-num">06</div>
+                                <div class="svc-icon-wrap"><iconify-icon icon="mdi:chart-line"></iconify-icon></div>
+                                <div class="svc-body"><div class="svc-name">Suivi de commande &amp; après-vente</div><div class="svc-desc">Traçabilité de vos commandes en temps réel, gestion des retours et support technique post-livraison.</div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+
+                        <!-- PROCESS -->
+                        <section class="process">
+                          <div class="rv"><div class="stag"><div class="stag-dot"></div><span>Comment ça marche</span></div>
+                          <h2 class="stitle">Notre processus en <em>4 étapes</em></h2></div>
+                          <div class="proc-grid">
+                            <div class="proc-step rv">
+                              <div class="proc-step-n">01</div>
+                              <div class="proc-icon"><iconify-icon icon="mdi:phone-outline"></iconify-icon></div>
+                              <div class="proc-title">Prise de contact</div>
+                              <div class="proc-desc">Appelez-nous ou envoyez votre demande par email ou via le formulaire. Notre équipe vous répond dans l'heure.</div>
+                              <iconify-icon class="proc-arrow" icon="mdi:arrow-right"></iconify-icon>
+                            </div>
+                            <div class="proc-step rv d1">
+                              <div class="proc-step-n">02</div>
+                              <div class="proc-icon"><iconify-icon icon="mdi:clipboard-list-outline"></iconify-icon></div>
+                              <div class="proc-title">Analyse &amp; devis</div>
+                              <div class="proc-desc">Nous analysons vos besoins techniques et vous soumettons un devis détaillé et compétitif sous 24h ouvrées.</div>
+                              <iconify-icon class="proc-arrow" icon="mdi:arrow-right"></iconify-icon>
+                            </div>
+                            <div class="proc-step rv d2">
+                              <div class="proc-step-n">03</div>
+                              <div class="proc-icon"><iconify-icon icon="mdi:cash-check"></iconify-icon></div>
+                              <div class="proc-title">Validation &amp; commande</div>
+                              <div class="proc-desc">Après validation de votre bon de commande, nous préparons votre colis depuis notre stock dakarois.</div>
+                              <iconify-icon class="proc-arrow" icon="mdi:arrow-right"></iconify-icon>
+                            </div>
+                            <div class="proc-step rv d3">
+                              <div class="proc-step-n">04</div>
+                              <div class="proc-icon"><iconify-icon icon="mdi:check-decagram-outline"></iconify-icon></div>
+                              <div class="proc-title">Livraison &amp; suivi</div>
+                              <div class="proc-desc">Votre commande est livrée sur chantier en 24–48h avec bon de livraison et suivi après-vente.</div>
+                              <iconify-icon class="proc-arrow" icon="mdi:check"></iconify-icon>
+                            </div>
+                          </div>
+                        </section>
+
+                        <!-- AVANTAGES -->
+                        <section class="avantages">
+                          <div class="rv"><div class="stag" style="background:rgba(139,207,52,.1);border-color:rgba(139,207,52,.25)"><div class="stag-dot"></div><span style="color:var(--lime)">Pourquoi nous choisir</span></div>
+                          <h2 class="stitle stitle-light">Les avantages <em>Impact Africa</em></h2></div>
+                          <div class="av-grid">
+                            <div class="av-card rv">
+                              <div class="av-icon"><iconify-icon icon="mdi:store-check-outline"></iconify-icon></div>
+                              <div class="av-title">Stock permanent à Dakar</div>
+                              <div class="av-desc">Toutes nos références sont disponibles en stock local. Pas d'attente de commandes internationales.</div>
+                            </div>
+                            <div class="av-card rv d1">
+                              <div class="av-icon"><iconify-icon icon="mdi:currency-usd-off"></iconify-icon></div>
+                              <div class="av-title">Prix compétitifs &amp; transparents</div>
+                              <div class="av-desc">TVA incluse, pas de frais cachés. Nos tarifs professionnels sont parmi les plus compétitifs du marché dakarois.</div>
+                            </div>
+                            <div class="av-card rv d2">
+                              <div class="av-icon"><iconify-icon icon="mdi:certificate-outline"></iconify-icon></div>
+                              <div class="av-title">Produits certifiés</div>
+                              <div class="av-desc">Tous nos produits sont conformes aux standards internationaux de qualité et adaptés au climat tropical.</div>
+                            </div>
+                            <div class="av-card rv d1">
+                              <div class="av-icon"><iconify-icon icon="mdi:account-group-outline"></iconify-icon></div>
+                              <div class="av-title">Équipe dédiée aux pros</div>
+                              <div class="av-desc">Interlocuteurs spécialisés, comptes professionnels et conditions sur-mesure pour les entreprises du bâtiment.</div>
+                            </div>
+                            <div class="av-card rv d2">
+                              <div class="av-icon"><iconify-icon icon="mdi:map-marker-radius"></iconify-icon></div>
+                              <div class="av-title">Présence locale forte</div>
+                              <div class="av-desc">Basés à Yoff, nous connaissons parfaitement le marché dakarois et pouvons intervenir rapidement sur site.</div>
+                            </div>
+                            <div class="av-card rv d3">
+                              <div class="av-icon"><iconify-icon icon="mdi:refresh"></iconify-icon></div>
+                              <div class="av-title">Catalogue en évolution continue</div>
+                              <div class="av-desc">Nous enrichissons régulièrement notre offre pour vous proposer les dernières innovations en menuiserie aluminium.</div>
+                            </div>
+                          </div>
+                        </section>
+
+                        <!-- TARIFS / OFFRES -->
+                        <section class="tarifs">
+                          <div class="rv"><div class="stag"><div class="stag-dot"></div><span>Nos offres</span></div>
+                          <h2 class="stitle">Choisissez la formule <em>adaptée</em></h2></div>
+                          <div class="tar-grid">
+                            <div class="tar-card rv">
+                              <div class="tar-head">
+                                <div class="tar-badge">Particulier &amp; Artisan</div>
+                                <div class="tar-name">Essentiel</div>
+                                <div class="tar-desc">Pour les commandes ponctuelles et les artisans indépendants.</div>
+                              </div>
+                              <div class="tar-body">
+                                <ul class="tar-features">
+                                  <li><iconify-icon icon="mdi:check-circle"></iconify-icon> Accès au catalogue complet</li>
+                                  <li><iconify-icon icon="mdi:check-circle"></iconify-icon> Devis sous 48h</li>
+                                  <li><iconify-icon icon="mdi:check-circle"></iconify-icon> Livraison sur Dakar</li>
+                                  <li><iconify-icon icon="mdi:check-circle"></iconify-icon> Conseil technique par email</li>
+                                  <li style="color:var(--gray)"><iconify-icon icon="mdi:close-circle" style="color:#ddd"></iconify-icon> Tarifs préférentiels</li>
+                                </ul>
+                                <a href="/contact" class="tar-btn">Nous contacter</a>
+                              </div>
+                            </div>
+                            <div class="tar-card featured rv d1">
+                              <div class="tar-head">
+                                <div class="tar-badge"><iconify-icon icon="mdi:star" style="font-size:12px;vertical-align:middle;margin-right:4px;color:var(--lime)"></iconify-icon>Le plus choisi</div>
+                                <div class="tar-name">Professionnel</div>
+                                <div class="tar-desc">Pour les entreprises et menuisiers avec des commandes régulières.</div>
+                              </div>
+                              <div class="tar-body">
+                                <ul class="tar-features">
+                                  <li><iconify-icon icon="mdi:check-circle"></iconify-icon> Catalogue complet prioritaire</li>
+                                  <li><iconify-icon icon="mdi:check-circle"></iconify-icon> Devis express sous 24h</li>
+                                  <li><iconify-icon icon="mdi:check-circle"></iconify-icon> Livraison express 24h</li>
+                                  <li><iconify-icon icon="mdi:check-circle"></iconify-icon> Interlocuteur dédié</li>
+                                  <li><iconify-icon icon="mdi:check-circle"></iconify-icon> Tarifs préférentiels</li>
+                                </ul>
+                                <a href="/contact" class="tar-btn">Créer mon compte pro</a>
+                              </div>
+                            </div>
+                            <div class="tar-card rv d2">
+                              <div class="tar-head">
+                                <div class="tar-badge">Grand compte</div>
+                                <div class="tar-name">Entreprise</div>
+                                <div class="tar-desc">Pour les promoteurs et entreprises à gros volumes de commande.</div>
+                              </div>
+                              <div class="tar-body">
+                                <ul class="tar-features">
+                                  <li><iconify-icon icon="mdi:check-circle"></iconify-icon> Tous les avantages Pro</li>
+                                  <li><iconify-icon icon="mdi:check-circle"></iconify-icon> Conditions de paiement flexibles</li>
+                                  <li><iconify-icon icon="mdi:check-circle"></iconify-icon> Réservation de stock</li>
+                                  <li><iconify-icon icon="mdi:check-circle"></iconify-icon> Visite technico-commerciale</li>
+                                  <li><iconify-icon icon="mdi:check-circle"></iconify-icon> Tarifs sur volume négociés</li>
+                                </ul>
+                                <a href="/contact" class="tar-btn">Demander un RDV</a>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                    <t t-call-assets="theme_impact_africa.assets_services" t-css="false"/>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

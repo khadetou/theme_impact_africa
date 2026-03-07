@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="impact_africa_layout" inherit_id="website.layout" name="Impact Africa Layout">
+        <xpath expr="//head" position="inside">
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+            <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+            <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+        </xpath>
+        <xpath expr="//div[@id='wrapwrap']" position="before">
+            <div class="cur" id="cur"></div>
+            <div class="cur-r" id="curR"></div>
+        </xpath>
+    </template>
+</odoo>

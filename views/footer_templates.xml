@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="impact_africa_footer" inherit_id="website.layout" name="Impact Africa Footer">
+        <xpath expr="//footer" position="replace">
+            <footer t-if="not no_footer" class="impact-footer">
+                <div class="impact-footer__inner">
+                    <div class="impact-footer__top">
+                        <div class="impact-footer__brand">
+                            <div class="impact-footer__eyebrow">
+                                <span class="impact-footer__eyebrow-line"/>
+                                <span>Impact Africa</span>
+                            </div>
+                            <div class="impact-footer__logo-row">
+                                <img src="/theme_impact_africa/static/src/img/Logo.svg" class="impact-footer__logo-image" alt="Impact Africa"/>
+                            </div>
+                            <p class="impact-footer__tagline">L'expertise aluminium au service des bâtisseurs d'Afrique de l'Ouest depuis 2021. S.A.S — Dakar, Sénégal.</p>
+                            <div class="impact-footer__contact-strip">
+                                <a href="tel:+221782378888">+221 78 237 88 88</a>
+                                <a href="mailto:contact@impact-africa.sn">contact@impact-africa.sn</a>
+                            </div>
+                        </div>
+                        <div class="impact-footer__nav">
+                            <div class="impact-footer__col">
+                                <h4>Navigation</h4>
+                                <ul>
+                                    <li><a href="/">Accueil</a></li>
+                                    <li><a href="/about">À propos</a></li>
+                                    <li><a href="/services">Services</a></li>
+                                    <li><a href="/partenaires">Partenaires</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="/connexion">Connexion</a></li>
+                                </ul>
+                            </div>
+                            <div class="impact-footer__col">
+                                <h4>Gammes</h4>
+                                <ul>
+                                    <li><a href="/#products">Profilés Aluminium</a></li>
+                                    <li><a href="/#products">Moustiquaires KCL</a></li>
+                                    <li><a href="/#products">Quincaillerie</a></li>
+                                    <li><a href="/#products">Joints &amp; Étanchéité</a></li>
+                                </ul>
+                            </div>
+                            <div class="impact-footer__col impact-footer__col--contact">
+                                <h4>Contact</h4>
+                                <ul>
+                                    <li><a href="tel:+221782378888">+221 78 237 88 88</a></li>
+                                    <li><a href="tel:+221776316100">+221 77 631 61 00</a></li>
+                                    <li><a href="mailto:contact@impact-africa.sn">contact@impact-africa.sn</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="impact-footer__bottom">
+                        <div class="impact-footer__copy">© 2026 Impact Africa — S.A.S au capital de 1 000 000 F CFA. Tous droits réservés.</div>
+                        <div class="impact-footer__legal">NINEA : 008696083 2V5 — SN-DKR-2021-B-22923<br/>Yoff Ernam, Rte de l'Aéroport N°93, Dakar</div>
+                    </div>
+                </div>
+            </footer>
+        </xpath>
+    </template>
+</odoo>

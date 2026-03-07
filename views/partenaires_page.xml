@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="page_partenaires" model="website.page">
+        <field name="name">Partenaires</field>
+        <field name="type">qweb</field>
+        <field name="url">/partenaires</field>
+        <field name="website_published">True</field>
+        <field name="arch" type="xml">
+            <t t-name="theme_impact_africa.partenaires_page">
+                <t t-call="website.layout">
+                    <t t-set="pageName" t-value="'impact-africa-partenaires'"/>
+                    <t t-set="title" t-value="'Partenaires — Impact Africa'"/>
+                    <t t-set="head">
+                        <t t-call-assets="theme_impact_africa.assets_partenaires" t-js="false"/>
+                    </t>
+                    <div id="wrap" class="oe_structure">
+                        <div class="page-hero">
+                          <div>
+                            <div class="ph-tag"><div class="ph-tag-line"></div><span class="ph-tag-text">Nos collaborateurs</span></div>
+                            <h1 class="ph-title">Nos<br /><em>partenaires</em></h1>
+                          </div>
+                          <div class="ph-right">
+                            <p class="ph-desc">Impact Africa collabore avec des fournisseurs et distributeurs de référence pour garantir des produits de haute qualité à ses clients professionnels.</p>
+                            <div class="ph-stats">
+                              <div><div class="ph-stat-n">12<em>+</em></div><div class="ph-stat-l">Partenaires actifs</div></div>
+                              <div><div class="ph-stat-n">5<em></em></div><div class="ph-stat-l">Pays représentés</div></div>
+                              <div><div class="ph-stat-n">4<em>+</em></div><div class="ph-stat-l">Ans de collaboration</div></div>
+                            </div>
+                          </div>
+                          <div class="ph-bg">PTN</div>
+                        </div>
+
+                        <!-- PARTNERS -->
+                        <section class="partners-section">
+                          <div class="rv"><div class="stag"><div class="stag-dot"></div><span>Nos partenaires</span></div>
+                          <h2 class="stitle">Des partenaires <em>de confiance</em><br />à l'échelle internationale</h2></div>
+
+                          <div class="p-filter">
+                            <button class="pf-btn active" onclick="filterPartners('all',this)">Tous</button>
+                            <button class="pf-btn" onclick="filterPartners('fournisseur',this)">Fournisseurs</button>
+                            <button class="pf-btn" onclick="filterPartners('distributeur',this)">Distributeurs</button>
+                            <button class="pf-btn" onclick="filterPartners('technique',this)">Technique</button>
+                          </div>
+
+                          <div class="p-grid" id="partnersGrid">
+                            <div class="partner-card rv" data-cat="fournisseur">
+                              <div class="pc-logo"><iconify-icon icon="mdi:factory"></iconify-icon></div>
+                              <div class="pc-cat">Fournisseur</div>
+                              <div class="pc-name">KCL Systems</div>
+                              <div class="pc-country"><iconify-icon icon="emojione:flag-for-france"></iconify-icon>France</div>
+                              <div class="pc-desc">Fabricant de référence des gammes de profilés aluminium KCL pour menuiserie, moustiquaire et vitrerie.</div>
+                              <div class="pc-tag"><iconify-icon icon="mdi:check-circle"></iconify-icon>Partenaire officiel</div>
+                            </div>
+                            <div class="partner-card rv d1" data-cat="fournisseur">
+                              <div class="pc-logo"><iconify-icon icon="mdi:cog-outline"></iconify-icon></div>
+                              <div class="pc-cat">Fournisseur</div>
+                              <div class="pc-name">BrioPro Hardware</div>
+                              <div class="pc-country"><iconify-icon icon="emojione:flag-for-italy"></iconify-icon>Italie</div>
+                              <div class="pc-desc">Spécialiste des fermetures, compas, paumelles et quincaillerie de précision pour menuiserie aluminium.</div>
+                              <div class="pc-tag"><iconify-icon icon="mdi:check-circle"></iconify-icon>Distributeur exclusif</div>
+                            </div>
+                            <div class="partner-card rv d2" data-cat="fournisseur">
+                              <div class="pc-logo"><iconify-icon icon="mdi:seal"></iconify-icon></div>
+                              <div class="pc-cat">Fournisseur</div>
+                              <div class="pc-name">SealTech Europe</div>
+                              <div class="pc-country"><iconify-icon icon="emojione:flag-for-germany"></iconify-icon>Allemagne</div>
+                              <div class="pc-desc">Leader européen en joints d'étanchéité, joints brosse et systèmes de fermeture pour aluminium.</div>
+                              <div class="pc-tag"><iconify-icon icon="mdi:check-circle"></iconify-icon>Partenaire certifié</div>
+                            </div>
+                            <div class="partner-card rv d3" data-cat="distributeur">
+                              <div class="pc-logo"><iconify-icon icon="mdi:truck-outline"></iconify-icon></div>
+                              <div class="pc-cat">Distributeur</div>
+                              <div class="pc-name">ADV Atelier du Verre</div>
+                              <div class="pc-country"><iconify-icon icon="emojione:flag-for-senegal"></iconify-icon>Sénégal</div>
+                              <div class="pc-desc">Partenaire local majeur — atelier de transformation du verre et client professionnel de référence à Dakar.</div>
+                              <div class="pc-tag"><iconify-icon icon="mdi:star"></iconify-icon>Client premium</div>
+                            </div>
+                            <div class="partner-card rv" data-cat="technique">
+                              <div class="pc-logo"><iconify-icon icon="mdi:tools"></iconify-icon></div>
+                              <div class="pc-cat">Technique</div>
+                              <div class="pc-name">AluSpec Morocco</div>
+                              <div class="pc-country"><iconify-icon icon="emojione:flag-for-morocco"></iconify-icon>Maroc</div>
+                              <div class="pc-desc">Centre de formation et de support technique pour les spécifications aluminium en Afrique francophone.</div>
+                              <div class="pc-tag"><iconify-icon icon="mdi:check-circle"></iconify-icon>Support technique</div>
+                            </div>
+                            <div class="partner-card rv d1" data-cat="fournisseur">
+                              <div class="pc-logo"><iconify-icon icon="mdi:format-align-bottom"></iconify-icon></div>
+                              <div class="pc-cat">Fournisseur</div>
+                              <div class="pc-name">RailSystem Pro</div>
+                              <div class="pc-country"><iconify-icon icon="emojione:flag-for-spain"></iconify-icon>Espagne</div>
+                              <div class="pc-desc">Fabricant spécialisé en rails aluminium, galets réglables et systèmes de coulissement de haute précision.</div>
+                              <div class="pc-tag"><iconify-icon icon="mdi:check-circle"></iconify-icon>Partenaire officiel</div>
+                            </div>
+                            <div class="partner-card rv d2" data-cat="distributeur">
+                              <div class="pc-logo"><iconify-icon icon="mdi:store-outline"></iconify-icon></div>
+                              <div class="pc-cat">Distributeur</div>
+                              <div class="pc-name">BATIMAT Sénégal</div>
+                              <div class="pc-country"><iconify-icon icon="emojione:flag-for-senegal"></iconify-icon>Sénégal</div>
+                              <div class="pc-desc">Réseau de distribution de matériaux de construction au Sénégal — partenaire logistique clé.</div>
+                              <div class="pc-tag"><iconify-icon icon="mdi:check-circle"></iconify-icon>Partenaire local</div>
+                            </div>
+                            <div class="partner-card rv d3" data-cat="technique">
+                              <div class="pc-logo"><iconify-icon icon="mdi:school-outline"></iconify-icon></div>
+                              <div class="pc-cat">Formation</div>
+                              <div class="pc-name">West Africa Build</div>
+                              <div class="pc-country"><iconify-icon icon="emojione:flag-for-senegal"></iconify-icon>Sénégal</div>
+                              <div class="pc-desc">Association sectorielle du bâtiment en Afrique de l'Ouest — promotion des standards de qualité.</div>
+                              <div class="pc-tag"><iconify-icon icon="mdi:handshake"></iconify-icon>Partenaire institutionnel</div>
+                            </div>
+                          </div>
+                        </section>
+
+                        <!-- DEVENIR PARTENAIRE -->
+                        <section class="devenir">
+                          <div class="rv"><div class="stag" style="background:rgba(139,207,52,.1);border-color:rgba(139,207,52,.25)"><div class="stag-dot"></div><span style="color:var(--lime)">Rejoindre le réseau</span></div>
+                          <h2 class="stitle stitle-light">Devenez <em>partenaire</em> Impact Africa</h2></div>
+                          <div class="dev-grid">
+                            <div class="dev-left rv">
+                              <h3>Construisons ensemble<br />l'<em>avenir</em> de la menuiserie<br />en Afrique</h3>
+                              <p>Vous êtes fabricant, distributeur ou prestataire technique ? Rejoignez notre réseau et bénéficiez d'un accès à un marché professionnel dynamique en pleine croissance au Sénégal.</p>
+                              <a href="/contact" class="dev-btn">Soumettre une candidature →</a>
+                            </div>
+                            <div class="dev-right rv d2">
+                              <div class="dev-avantage">
+                                <div class="dev-av-icon"><iconify-icon icon="mdi:chart-line-variant"></iconify-icon></div>
+                                <div><div class="dev-av-title">Accès à un marché en croissance</div><div class="dev-av-desc">Le secteur de la construction au Sénégal croît de 8% par an. Positionnez-vous dès maintenant.</div></div>
+                              </div>
+                              <div class="dev-avantage">
+                                <div class="dev-av-icon"><iconify-icon icon="mdi:account-network"></iconify-icon></div>
+                                <div><div class="dev-av-title">Réseau professionnel établi</div><div class="dev-av-desc">Accédez directement à plus de 200 professionnels du bâtiment actifs à Dakar et en région.</div></div>
+                              </div>
+                              <div class="dev-avantage">
+                                <div class="dev-av-icon"><iconify-icon icon="mdi:bullhorn-outline"></iconify-icon></div>
+                                <div><div class="dev-av-title">Visibilité &amp; promotion</div><div class="dev-av-desc">Vos produits sont présentés et promus auprès de notre réseau de clients professionnels fidèles.</div></div>
+                              </div>
+                              <div class="dev-avantage">
+                                <div class="dev-av-icon"><iconify-icon icon="mdi:shield-star-outline"></iconify-icon></div>
+                                <div><div class="dev-av-title">Garantie qualité partagée</div><div class="dev-av-desc">Nos standards de qualité sont élevés — un label de confiance pour vos produits sur le marché local.</div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+
+                        <!-- TÉMOIGNAGES -->
+                        <section class="temoignages">
+                          <div class="rv"><div class="stag"><div class="stag-dot"></div><span>Ils nous font confiance</span></div>
+                          <h2 class="stitle">Ce que disent nos <em>partenaires</em></h2></div>
+                          <div class="temo-grid">
+                            <div class="temo-card rv">
+                              <div class="temo-stars"><iconify-icon icon="mdi:star"></iconify-icon><iconify-icon icon="mdi:star"></iconify-icon><iconify-icon icon="mdi:star"></iconify-icon><iconify-icon icon="mdi:star"></iconify-icon><iconify-icon icon="mdi:star"></iconify-icon></div>
+                              <div class="temo-quote">"</div>
+                              <div class="temo-text">Impact Africa est un partenaire fiable et réactif. Leurs délais de livraison sont tenus et la qualité des produits est constante. Nous travaillons ensemble depuis le premier jour.</div>
+                              <div class="temo-author">
+                                <div class="temo-avatar"><iconify-icon icon="mdi:account"></iconify-icon></div>
+                                <div><div class="temo-name">Directeur ADV</div><div class="temo-role">Atelier du Verre · Dakar</div></div>
+                              </div>
+                            </div>
+                            <div class="temo-card rv d1">
+                              <div class="temo-stars"><iconify-icon icon="mdi:star"></iconify-icon><iconify-icon icon="mdi:star"></iconify-icon><iconify-icon icon="mdi:star"></iconify-icon><iconify-icon icon="mdi:star"></iconify-icon><iconify-icon icon="mdi:star"></iconify-icon></div>
+                              <div class="temo-quote">"</div>
+                              <div class="temo-text">Le catalogue est complet et les prix sont compétitifs. Ce qui fait vraiment la différence c'est le conseil technique — leur équipe connaît parfaitement les produits.</div>
+                              <div class="temo-author">
+                                <div class="temo-avatar"><iconify-icon icon="mdi:account"></iconify-icon></div>
+                                <div><div class="temo-name">Mamadou B.</div><div class="temo-role">Menuisier professionnel · Pikine</div></div>
+                              </div>
+                            </div>
+                            <div class="temo-card rv d2">
+                              <div class="temo-stars"><iconify-icon icon="mdi:star"></iconify-icon><iconify-icon icon="mdi:star"></iconify-icon><iconify-icon icon="mdi:star"></iconify-icon><iconify-icon icon="mdi:star"></iconify-icon><iconify-icon icon="mdi:star-half-full"></iconify-icon></div>
+                              <div class="temo-quote">"</div>
+                              <div class="temo-text">Un distributeur sérieux avec des produits certifiés. Nous leur faisons confiance pour nos projets immobiliers au Sénégal. La réactivité est exemplaire.</div>
+                              <div class="temo-author">
+                                <div class="temo-avatar"><iconify-icon icon="mdi:account"></iconify-icon></div>
+                                <div><div class="temo-name">Fatou N.</div><div class="temo-role">Promotrice immobilière · Dakar</div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                    <t t-call-assets="theme_impact_africa.assets_partenaires" t-css="false"/>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

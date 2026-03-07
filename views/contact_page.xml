@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="page_contact" model="website.page">
+        <field name="name">Contact</field>
+        <field name="type">qweb</field>
+        <field name="url">/contact</field>
+        <field name="website_published">True</field>
+        <field name="arch" type="xml">
+            <t t-name="theme_impact_africa.contact_page">
+                <t t-call="website.layout">
+                    <t t-set="pageName" t-value="'impact-africa-contact'"/>
+                    <t t-set="title" t-value="'Contact — Impact Africa'"/>
+                    <t t-set="head">
+                        <t t-call-assets="theme_impact_africa.assets_contact" t-js="false"/>
+                    </t>
+                    <div id="wrap" class="oe_structure">
+                        <!-- HERO SPLIT CONTACT -->
+                        <div class="contact-hero">
+                          <div class="ch-left">
+                            <div class="ch-bg">CT</div>
+                            <div class="ch-tag"><div class="ch-tag-line"></div><span class="ch-tag-text">Travaillons ensemble</span></div>
+                            <h1 class="ch-title">Parlons de<br />votre<br /><em>projet</em></h1>
+
+                            <div class="ch-coords">
+                              <div class="ch-coord">
+                                <div class="cc-icon"><iconify-icon icon="mdi:map-marker-outline"></iconify-icon></div>
+                                <div><div class="cc-label">Adresse</div><div class="cc-val">Yoff Ernam – Rte de l'aéroport N° 93<br />BP 8774 – CP 12000, Dakar – Yoff</div></div>
+                              </div>
+                              <div class="ch-coord">
+                                <div class="cc-icon"><iconify-icon icon="mdi:phone-outline"></iconify-icon></div>
+                                <div><div class="cc-label">Téléphone</div><div class="cc-val"><a href="tel:+221782378888">+221 78 237 88 88</a><br /><a href="tel:+221776316100">+221 77 631 61 00</a></div></div>
+                              </div>
+                              <div class="ch-coord">
+                                <div class="cc-icon"><iconify-icon icon="mdi:email-outline"></iconify-icon></div>
+                                <div><div class="cc-label">Email</div><div class="cc-val"><a href="mailto:contact@impact-africa.sn">contact@impact-africa.sn</a></div></div>
+                              </div>
+                            </div>
+
+                            <div class="ch-horaires">
+                              <div class="ch-h-title"><iconify-icon icon="mdi:clock-outline" style="vertical-align:middle;margin-right:6px"></iconify-icon>Horaires d'ouverture</div>
+                              <div class="ch-h-row today"><span>Lundi – Vendredi</span><span>08h00 – 18h00</span></div>
+                              <div class="ch-h-row"><span>Samedi</span><span>09h00 – 14h00</span></div>
+                              <div class="ch-h-row"><span>Dimanche</span><span>Fermé</span></div>
+                            </div>
+                          </div>
+
+                          <div class="ch-right">
+                            <div class="form-header">
+                              <h2 class="form-title">Envoyez-nous<br />un <em>message</em></h2>
+                              <p class="form-sub">Réponse garantie sous 24h ouvrées · Devis gratuit</p>
+                            </div>
+                            <form action="/website/form/" method="post" class="form s_website_form o_mark_required impact-contact-form" data-model_name="crm.lead" data-pre-fill="true" data-mark="*">
+                              <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                              <input type="hidden" name="name" id="contactLeadName" value="Site web - Contact"/>
+                              <div class="f-row">
+                                <div class="fg form-field s_website_form_field s_website_form_model_required" data-type="char">
+                                  <label for="contact_name"><iconify-icon icon="mdi:account-outline"></iconify-icon>Nom complet</label>
+                                  <input id="contact_name" class="s_website_form_input" type="text" name="contact_name" placeholder="Votre nom" required="required"/>
+                                </div>
+                                <div class="fg form-field s_website_form_field" data-type="char">
+                                  <label for="partner_name"><iconify-icon icon="mdi:domain"></iconify-icon>Entreprise</label>
+                                  <input id="partner_name" class="s_website_form_input" type="text" name="partner_name" placeholder="Votre société"/>
+                                </div>
+                              </div>
+                              <div class="f-row">
+                                <div class="fg form-field s_website_form_field" data-type="tel">
+                                  <label for="phone"><iconify-icon icon="mdi:phone-outline"></iconify-icon>Téléphone</label>
+                                  <input id="phone" class="s_website_form_input" type="tel" name="phone" placeholder="+221 XX XXX XX XX"/>
+                                </div>
+                                <div class="fg form-field s_website_form_field s_website_form_model_required" data-type="email">
+                                  <label for="email_from"><iconify-icon icon="mdi:email-outline"></iconify-icon>Email</label>
+                                  <input id="email_from" class="s_website_form_input" type="email" name="email_from" placeholder="vous@exemple.sn" required="required"/>
+                                </div>
+                              </div>
+                              <div class="fg form-field s_website_form_field" data-type="selection">
+                                <label for="contactRequestType"><iconify-icon icon="mdi:tag-outline"></iconify-icon>Type de demande</label>
+                                <select id="contactRequestType" class="s_website_form_input" name="request_type">
+                                  <option value="">Sélectionner...</option>
+                                  <option value="Demande de devis">Demande de devis</option>
+                                  <option value="Information produit">Information produit</option>
+                                  <option value="Conseil technique">Conseil technique</option>
+                                  <option value="Partenariat commercial">Partenariat commercial</option>
+                                  <option value="Compte professionnel">Compte professionnel</option>
+                                  <option value="Autre">Autre</option>
+                                </select>
+                              </div>
+                              <div class="fg form-field s_website_form_field s_website_form_model_required" data-type="text">
+                                <label for="description"><iconify-icon icon="mdi:text-box-outline"></iconify-icon>Votre message</label>
+                                <textarea id="description" class="s_website_form_input" name="description" placeholder="Décrivez votre projet, les produits qui vous intéressent, les quantités estimées..." required="required"></textarea>
+                              </div>
+                              <div class="contact-form-actions">
+                                <div class="contact-form-submit">
+                                  <span id="s_website_form_result" class="impact-contact-form-result"></span>
+                                  <a href="#" role="button" class="f-btn s_website_form_send">
+                                    <iconify-icon icon="mdi:send-outline"></iconify-icon>Envoyer la demande
+                                  </a>
+                                </div>
+                                <span class="f-note"><iconify-icon icon="mdi:shield-check-outline"></iconify-icon>Vos données restent confidentielles</span>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+
+                        <!-- MAP -->
+                        <div class="map-band">
+                          <div class="map-grid"></div>
+                          <div class="map-rings"><div class="map-ring"></div><div class="map-ring"></div><div class="map-ring"></div><div class="map-pin"></div></div>
+                          <div class="map-content">
+                            <div class="map-addr">Yoff Ernam, Dakar</div>
+                            <div class="map-sub">Route de l'Aéroport N° 93 — Sénégal</div>
+                            <a href="https://maps.google.com/?q=Yoff+Ernam+Dakar" target="_blank" class="map-btn"><iconify-icon icon="mdi:map-marker"></iconify-icon>Ouvrir dans Google Maps</a>
+                          </div>
+                        </div>
+
+                        <!-- FAQ -->
+                        <section class="faq">
+                          <div class="rv"><div class="stag"><div class="stag-dot"></div><span>Questions fréquentes</span></div>
+                          <h2 class="stitle">Vous avez des <em>questions ?</em></h2></div>
+                          <div class="faq-grid">
+                            <div class="faq-left rv">
+                              <h3>Tout ce que<br />vous devez<br /><em>savoir</em></h3>
+                              <p>Retrouvez les réponses aux questions les plus posées par nos clients. Vous ne trouvez pas ce que vous cherchez ? Contactez-nous directement.</p>
+                            </div>
+                            <div class="faq-list rv d2">
+                              <div class="faq-item">
+                                <div class="faq-q" onclick="toggleFaq(this)">
+                                  <span class="faq-q-text">Quels sont vos délais de livraison sur Dakar ?</span>
+                                  <iconify-icon class="faq-q-icon" icon="mdi:plus"></iconify-icon>
+                                </div>
+                                <div class="faq-a">Nos livraisons sur Dakar et la région sont effectuées sous 24 à 48 heures ouvrées après validation de la commande. Pour les commandes urgentes, un service express est disponible sous 24h.</div>
+                              </div>
+                              <div class="faq-item">
+                                <div class="faq-q" onclick="toggleFaq(this)">
+                                  <span class="faq-q-text">Comment obtenir un compte professionnel ?</span>
+                                  <iconify-icon class="faq-q-icon" icon="mdi:plus"></iconify-icon>
+                                </div>
+                                <div class="faq-a">Pour créer un compte professionnel, remplissez le formulaire de contact en précisant votre activité et vos besoins estimés. Notre équipe commerciale vous contacte sous 24h pour finaliser votre dossier.</div>
+                              </div>
+                              <div class="faq-item">
+                                <div class="faq-q" onclick="toggleFaq(this)">
+                                  <span class="faq-q-text">Proposez-vous des commandes sur mesure ?</span>
+                                  <iconify-icon class="faq-q-icon" icon="mdi:plus"></iconify-icon>
+                                </div>
+                                <div class="faq-a">Oui, nous pouvons adapter les quantités et les spécifications selon vos besoins. Contactez-nous avec vos plans et métrages pour un devis personnalisé.</div>
+                              </div>
+                              <div class="faq-item">
+                                <div class="faq-q" onclick="toggleFaq(this)">
+                                  <span class="faq-q-text">Quelles sont vos conditions de paiement ?</span>
+                                  <iconify-icon class="faq-q-icon" icon="mdi:plus"></iconify-icon>
+                                </div>
+                                <div class="faq-a">Pour les clients particuliers, paiement à la commande. Pour les comptes professionnels, des conditions de paiement adaptées (paiement différé, facilités) peuvent être accordées selon votre profil.</div>
+                              </div>
+                              <div class="faq-item">
+                                <div class="faq-q" onclick="toggleFaq(this)">
+                                  <span class="faq-q-text">Livrez-vous en dehors de Dakar ?</span>
+                                  <iconify-icon class="faq-q-icon" icon="mdi:plus"></iconify-icon>
+                                </div>
+                                <div class="faq-a">Actuellement, notre service de livraison directe couvre Dakar et la région immédiate. Pour des livraisons en région (Saint-Louis, Thiès, etc.), contactez-nous pour étudier les modalités.</div>
+                              </div>
+                              <div class="faq-item">
+                                <div class="faq-q" onclick="toggleFaq(this)">
+                                  <span class="faq-q-text">Puis-je venir récupérer ma commande en magasin ?</span>
+                                  <iconify-icon class="faq-q-icon" icon="mdi:plus"></iconify-icon>
+                                </div>
+                                <div class="faq-a">Absolument. Vous pouvez récupérer vos commandes directement à notre dépôt de Yoff Ernam, Route de l'aéroport N°93, du lundi au vendredi de 8h à 18h et le samedi de 9h à 14h.</div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+
+                        <div class="notif" id="notif"><iconify-icon icon="mdi:check-circle-outline" style="font-size:16px;vertical-align:middle;margin-right:6px"></iconify-icon>Message envoyé — réponse sous 24h</div>
+                    <t t-call-assets="theme_impact_africa.assets_contact" t-css="false"/>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

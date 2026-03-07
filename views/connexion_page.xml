@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="page_connexion" model="website.page">
+        <field name="name">Connexion</field>
+        <field name="type">qweb</field>
+        <field name="url">/connexion</field>
+        <field name="website_published">True</field>
+        <field name="arch" type="xml">
+            <t t-name="theme_impact_africa.connexion_page">
+                <t t-call="website.layout">
+                    <t t-set="pageName" t-value="'impact-africa-connexion'"/>
+                    <t t-set="title" t-value="'Connexion — Impact Africa'"/>
+                    <t t-set="head">
+                        <t t-call-assets="theme_impact_africa.assets_connexion" t-js="false"/>
+                    </t>
+                    <t t-set="no_header" t-value="True"/>
+                    <t t-set="no_footer" t-value="True"/>
+                    <div id="wrap" class="oe_structure">
+                        <!-- LEFT PANEL -->
+                        <div class="login-left">
+                          <div class="ll-stripe"></div>
+                          <div class="ll-bg-text">IA</div>
+
+                          <div class="ll-top">
+                            <a class="ll-logo" href="/">
+                              <img src="/theme_impact_africa/static/src/img/Logo.svg" class="ll-logo-image" alt="Impact Africa"/>
+                            </a>
+                          </div>
+
+                          <div class="ll-middle">
+                            <div class="ll-tag"><div class="ll-tag-line"></div><span class="ll-tag-text">Espace professionnel</span></div>
+                            <h2 class="ll-title">Votre espace<br /><em>client pro</em></h2>
+                            <p class="ll-desc">Accédez à vos commandes, vos devis, vos tarifs préférentiels et votre historique d'achats depuis votre espace dédié.</p>
+
+                            <div class="ll-features">
+                              <div class="ll-feat"><iconify-icon icon="mdi:package-variant-closed-check"></iconify-icon>Suivi de vos commandes en temps réel</div>
+                              <div class="ll-feat"><iconify-icon icon="mdi:file-document-check-outline"></iconify-icon>Accès à vos devis et factures</div>
+                              <div class="ll-feat"><iconify-icon icon="mdi:tag-multiple-outline"></iconify-icon>Tarifs professionnels exclusifs</div>
+                              <div class="ll-feat"><iconify-icon icon="mdi:truck-fast-outline"></iconify-icon>Commandes express prioritaires</div>
+                            </div>
+                          </div>
+
+                          <div class="ll-bottom">
+                            <span class="ll-bottom-text">© 2026 Impact Africa · NINEA 008696083 2V5</span>
+                            <a href="/" style="font-size:11px;color:rgba(255,255,255,.25);text-decoration:none;letter-spacing:1px;transition:color .3s" onmouseover="this.style.color='rgba(255,255,255,.6)'" onmouseout="this.style.color='rgba(255,255,255,.25)'">Retour au site →</a>
+                          </div>
+                        </div>
+
+                        <!-- RIGHT PANEL — FORM -->
+                        <div class="login-right">
+                          <div class="lr-top">
+                            <a href="/" class="lr-back"><iconify-icon icon="mdi:arrow-left"></iconify-icon>Retour au site</a>
+                            <span class="lr-lang">FR</span>
+                          </div>
+
+                          <!-- TABS -->
+                          <div class="auth-tabs">
+                            <div class="auth-tab active" onclick="switchTab('login',this)">Se connecter</div>
+                            <div class="auth-tab" onclick="switchTab('register',this)">Créer un compte</div>
+                          </div>
+
+                          <!-- LOGIN PANEL -->
+                          <div class="auth-panel active" id="loginPanel">
+                            <h3 class="auth-title">Bon retour,<br /><em>connectez-vous</em></h3>
+                            <p class="auth-sub">Accédez à votre espace client professionnel.</p>
+
+                            <div class="fg" id="fg-email">
+                              <label><iconify-icon icon="mdi:email-outline"></iconify-icon>Email professionnel</label>
+                              <div class="input-wrap"><input type="email" id="loginEmail" placeholder="vous@entreprise.sn" oninput="clearError('fg-email')" /></div>
+                              <span class="field-error"><iconify-icon icon="mdi:alert-circle-outline"></iconify-icon>Adresse email invalide</span>
+                            </div>
+
+                            <div class="fg" id="fg-pw">
+                              <label><iconify-icon icon="mdi:lock-outline"></iconify-icon>Mot de passe</label>
+                              <div class="input-wrap">
+                                <input type="password" id="loginPw" placeholder="••••••••" oninput="clearError('fg-pw')" />
+                                <span class="pw-toggle" onclick="togglePw('loginPw',this)"><iconify-icon icon="mdi:eye-outline"></iconify-icon></span>
+                              </div>
+                              <span class="field-error"><iconify-icon icon="mdi:alert-circle-outline"></iconify-icon>Mot de passe requis</span>
+                            </div>
+
+                            <div class="f-options">
+                              <label class="f-check"><input type="checkbox" />Se souvenir de moi</label>
+                              <a href="#" class="f-forgot">Mot de passe oublié ?</a>
+                            </div>
+
+                            <button class="auth-btn" id="loginBtn" onclick="handleLogin()">
+                              <iconify-icon icon="mdi:login"></iconify-icon>Se connecter
+                            </button>
+
+                            <div class="auth-divider"><span>ou continuer avec</span></div>
+
+                            <div class="social-btns">
+                              <a href="#" class="s-btn"><iconify-icon icon="mdi:google" style="color:#DB4437"></iconify-icon>Google</a>
+                              <a href="#" class="s-btn"><iconify-icon icon="mdi:microsoft" style="color:#0078D4"></iconify-icon>Microsoft</a>
+                            </div>
+
+                            <p class="auth-switch">Pas encore de compte ? <a onclick="switchTab('register',document.querySelectorAll('.auth-tab')[1])">Créer un compte pro</a></p>
+                          </div>
+
+                          <!-- REGISTER PANEL -->
+                          <div class="auth-panel" id="registerPanel">
+                            <div class="pro-badge"><iconify-icon icon="mdi:briefcase-check-outline"></iconify-icon>Compte Professionnel</div>
+                            <h3 class="auth-title">Rejoignez<br /><em>Impact Africa</em></h3>
+                            <p class="auth-sub">Créez votre compte et accédez aux avantages pro.</p>
+
+                            <div class="fg"><label><iconify-icon icon="mdi:account-outline"></iconify-icon>Nom complet</label><div class="input-wrap"><input type="text" placeholder="Prénom Nom" /></div></div>
+                            <div class="fg"><label><iconify-icon icon="mdi:domain"></iconify-icon>Entreprise</label><div class="input-wrap"><input type="text" placeholder="Votre société ou atelier" /></div></div>
+                            <div class="fg"><label><iconify-icon icon="mdi:phone-outline"></iconify-icon>Téléphone</label><div class="input-wrap"><input type="tel" placeholder="+221 XX XXX XX XX" /></div></div>
+                            <div class="fg"><label><iconify-icon icon="mdi:email-outline"></iconify-icon>Email professionnel</label><div class="input-wrap"><input type="email" placeholder="vous@entreprise.sn" /></div></div>
+                            <div class="fg"><label><iconify-icon icon="mdi:lock-outline"></iconify-icon>Mot de passe</label><div class="input-wrap"><input type="password" id="regPw" placeholder="Minimum 8 caractères" /><span class="pw-toggle" onclick="togglePw('regPw',this)"><iconify-icon icon="mdi:eye-outline"></iconify-icon></span></div></div>
+
+                            <button class="auth-btn" onclick="handleRegister()" style="margin-top:8px">
+                              <iconify-icon icon="mdi:account-plus-outline"></iconify-icon>Créer mon compte pro
+                            </button>
+
+                            <p class="auth-switch" style="margin-top:16px">En créant un compte, vous acceptez nos <a href="#">conditions d'utilisation</a>.</p>
+                            <p class="auth-switch">Déjà inscrit ? <a onclick="switchTab('login',document.querySelectorAll('.auth-tab')[0])">Se connecter</a></p>
+                          </div>
+                        </div>
+                    <t t-call-assets="theme_impact_africa.assets_connexion" t-css="false"/>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

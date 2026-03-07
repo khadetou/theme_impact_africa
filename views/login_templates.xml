@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="impact_africa_login_layout" inherit_id="website.login_layout" name="Impact Africa Login Layout" priority="90">
+        <xpath expr="//t[@t-call='website.layout']" position="replace">
+            <t t-set="html_data" t-value="{'style': 'height: 100%;'}"/>
+            <t t-set="body_classname" t-value="'impact-login-body'"/>
+            <t t-set="no_header" t-value="True"/>
+            <t t-set="no_footer" t-value="True"/>
+            <t t-set="pageName" t-value="'impact-africa-connexion'"/>
+            <t t-set="title" t-value="'Connexion — Impact Africa'"/>
+            <t t-set="head">
+                <t t-out="head or ''"/>
+                <link rel="preconnect" href="https://fonts.googleapis.com"/>
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+                <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+                <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+                <t t-call-assets="theme_impact_africa.assets_connexion" t-js="false"/>
+            </t>
+            <t t-call="web.frontend_layout">
+                <div class="cur" id="cur"></div>
+                <div class="cur-r" id="curR"></div>
+                <div class="oe_website_login_container impact-login-shell">
+                    <div class="login-left">
+                        <div class="ll-stripe"></div>
+                        <div class="ll-bg-text">IA</div>
+
+                        <div class="ll-top">
+                            <a class="ll-logo" href="/">
+                                <img src="/theme_impact_africa/static/src/img/Logo.svg" class="ll-logo-image" alt="Impact Africa"/>
+                            </a>
+                        </div>
+
+                        <div class="ll-middle">
+                            <div class="ll-tag"><div class="ll-tag-line"></div><span class="ll-tag-text">Espace professionnel</span></div>
+                            <h2 class="ll-title">Votre espace<br/><em>client pro</em></h2>
+                            <p class="ll-desc">Accédez à vos commandes, vos devis, vos tarifs préférentiels et votre historique d'achats depuis votre espace dédié.</p>
+
+                            <div class="ll-features">
+                                <div class="ll-feat"><iconify-icon icon="mdi:package-variant-closed-check"></iconify-icon>Suivi de vos commandes en temps réel</div>
+                                <div class="ll-feat"><iconify-icon icon="mdi:file-document-check-outline"></iconify-icon>Accès à vos devis et factures</div>
+                                <div class="ll-feat"><iconify-icon icon="mdi:tag-multiple-outline"></iconify-icon>Tarifs professionnels exclusifs</div>
+                                <div class="ll-feat"><iconify-icon icon="mdi:truck-fast-outline"></iconify-icon>Commandes express prioritaires</div>
+                            </div>
+                        </div>
+
+                        <div class="ll-bottom">
+                            <span class="ll-bottom-text">© 2026 Impact Africa · NINEA 008696083 2V5</span>
+                            <a href="/" style="font-size:11px;color:rgba(255,255,255,.25);text-decoration:none;letter-spacing:1px;transition:color .3s">Retour au site →</a>
+                        </div>
+                    </div>
+
+                    <div class="login-right">
+                        <div class="login-right-inner">
+                            <div class="lr-top">
+                                <a href="/" class="lr-back"><iconify-icon icon="mdi:arrow-left"></iconify-icon>Retour au site</a>
+                                <span class="lr-lang">Acces pro</span>
+                            </div>
+                            <div class="auth-panel active">
+                                <t t-out="0"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <t t-call-assets="theme_impact_africa.assets_connexion" t-css="false"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="impact_africa_web_login" inherit_id="web.login" name="Impact Africa Login Form" priority="90">
+        <xpath expr="//owl-component[@name='web.user_switch']" position="replace"/>
+        <xpath expr="//form[contains(@t-attf-class, 'oe_login_form')] | //form[contains(concat(' ', normalize-space(@class), ' '), ' oe_login_form ')]" position="replace">
+            <form class="oe_login_form impact-login-form" role="form" t-attf-action="/web/login" method="post" onsubmit="this.action = '/web/login' + location.hash" data-captcha="login">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                <h3 class="auth-title">Bon retour,<br/><em>connectez-vous</em></h3>
+                <p class="auth-sub">Accédez à votre espace client professionnel.</p>
+
+                <div class="fg" t-if="databases and len(databases) &gt; 1">
+                    <label for="db"><iconify-icon icon="mdi:database-outline"></iconify-icon>Base de données</label>
+                    <div class="input-wrap input-wrap-group">
+                        <input type="text" name="db" t-att-value="request.db" id="db" required="required" readonly="readonly"/>
+                        <a role="button" href="/web/database/selector" class="db-select-btn">
+                            <span>Sélectionner</span>
+                            <i class="fa fa-database" role="img" aria-label="Database" title="Database"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="fg">
+                    <label for="login"><iconify-icon icon="mdi:email-outline"></iconify-icon>Email professionnel</label>
+                    <div class="input-wrap">
+                        <input type="text" placeholder="vous@entreprise.sn" name="login" t-att-value="login" id="login" required="required" autocapitalize="off" autocomplete="username"/>
+                    </div>
+                </div>
+
+                <div class="fg">
+                    <label for="password"><iconify-icon icon="mdi:lock-outline"></iconify-icon>Mot de passe</label>
+                    <div class="input-wrap">
+                        <input type="password" placeholder="••••••••" name="password" id="password" required="required" autocomplete="current-password" t-att-autofocus="'autofocus' if login else None" maxlength="4096"/>
+                        <span class="pw-toggle" onclick="togglePw('password',this)"><iconify-icon icon="mdi:eye-outline"></iconify-icon></span>
+                    </div>
+                </div>
+
+                <p class="login-alert login-alert-error" t-if="error" role="alert">
+                    <iconify-icon icon="mdi:alert-circle-outline"></iconify-icon>
+                    <span t-out="error"/>
+                </p>
+                <p class="login-alert login-alert-success" t-if="message" role="status">
+                    <iconify-icon icon="mdi:check-circle-outline"></iconify-icon>
+                    <span t-out="message"/>
+                </p>
+
+                <div class="f-options">
+                    <span class="auth-meta">Accès sécurisé</span>
+                    <a href="/web/reset_password" class="f-forgot">Mot de passe oublié ?</a>
+                </div>
+
+                <div class="oe_login_buttons">
+                    <button type="submit" class="auth-btn">
+                        <iconify-icon icon="mdi:login"></iconify-icon>Se connecter
+                    </button>
+                    <t t-if="debug">
+                        <button type="submit" name="redirect" value="/web/become" class="impact-debug-link">Se connecter en superutilisateur</button>
+                    </t>
+                    <t t-call="web.login_oauth"/>
+                </div>
+
+                <input type="hidden" name="type" value="password"/>
+                <input type="hidden" name="redirect" t-att-value="redirect"/>
+
+                <p class="auth-switch">Pas encore de compte ? <a href="/contact">Contactez-nous</a></p>
+            </form>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="page_about" model="website.page">
+        <field name="name">À propos</field>
+        <field name="type">qweb</field>
+        <field name="url">/about</field>
+        <field name="website_published">True</field>
+        <field name="arch" type="xml">
+            <t t-name="theme_impact_africa.about_page">
+                <t t-call="website.layout">
+                    <t t-set="pageName" t-value="'impact-africa-about'"/>
+                    <t t-set="title" t-value="'À propos — Impact Africa'"/>
+                    <t t-set="head">
+                        <t t-call-assets="theme_impact_africa.assets_about" t-js="false"/>
+                    </t>
+                    <div id="wrap" class="oe_structure">
+                        <!-- PAGE HERO -->
+                        <div class="page-hero">
+                          <div>
+                            <div class="ph-tag"><div class="ph-tag-line"></div><span class="ph-tag-text">Qui sommes-nous</span></div>
+                            <h1 class="ph-title">Notre<br /><em>histoire</em></h1>
+                          </div>
+                          <div class="ph-right">
+                            <p class="ph-desc">Depuis 2021, Impact Africa s'est imposée comme le partenaire de référence pour les professionnels de la menuiserie aluminium à Dakar et en Afrique de l'Ouest.</p>
+                            <div class="ph-meta">
+                              <div class="ph-meta-item"><div class="ph-meta-n">2021<em></em></div><div class="ph-meta-l">Année de fondation</div></div>
+                              <div class="ph-meta-item"><div class="ph-meta-n">200<em>+</em></div><div class="ph-meta-l">Clients professionnels</div></div>
+                              <div class="ph-meta-item"><div class="ph-meta-n">35<em>+</em></div><div class="ph-meta-l">Références catalogue</div></div>
+                              <div class="ph-meta-item"><div class="ph-meta-n">4<em>+</em></div><div class="ph-meta-l">Années d'expertise</div></div>
+                            </div>
+                          </div>
+                          <div class="ph-bg">IA</div>
+                        </div>
+
+                        <!-- HISTOIRE -->
+                        <section class="histoire">
+                          <div class="rv"><div class="stag"><div class="stag-dot"></div><span>Notre ADN</span></div>
+                          <h2 class="stitle">Une entreprise née de <em>la passion</em><br />du bâtiment africain</h2></div>
+                          <div class="hist-grid">
+                            <div class="hist-visual rv">
+                              <div class="hist-main">
+                                <div class="hist-img-text">
+                                  <div class="hist-img-year">2021</div>
+                                  <div class="hist-img-label">Fondation · Dakar</div>
+                                </div>
+                              </div>
+                              <div class="hist-accent">
+                                <div class="hist-accent-n">Dakar<em></em></div>
+                                <div class="hist-accent-l">Yoff — Sénégal</div>
+                              </div>
+                              <div class="hist-badge"><div class="hist-badge-dot"></div><div class="hist-badge-t">NINEA Certifié</div></div>
+                            </div>
+                            <div class="hist-text rv d2">
+                              <p><strong>Impact Africa</strong> est née d'une vision simple : doter les artisans et entreprises du bâtiment sénégalais d'un fournisseur local fiable, complet et expert en menuiserie aluminium.</p>
+                              <p>Fondée en 2021 à Yoff, Dakar, par des professionnels du secteur, l'entreprise a rapidement construit une réputation d'excellence grâce à la <strong>qualité de ses produits</strong>, la réactivité de son équipe et sa profonde connaissance du marché ouest-africain.</p>
+                              <p>Aujourd'hui, nous distribuons plus de <strong>35 références</strong> couvrant l'intégralité des besoins en menuiserie aluminium : profilés, systèmes moustiquaire, quincaillerie, joints et accessoires — avec une livraison garantie sur Dakar en 24 à 48 heures.</p>
+                              <p>Notre mission est d'<strong>accompagner chaque projet</strong>, de la petite rénovation au grand chantier, avec le même niveau d'exigence et de professionnalisme.</p>
+                            </div>
+                          </div>
+                        </section>
+
+                        <!-- TIMELINE -->
+                        <section class="timeline">
+                          <div class="rv"><div class="stag"><div class="stag-dot"></div><span>Notre parcours</span></div>
+                          <h2 class="stitle">Les <em>étapes clés</em> de notre développement</h2></div>
+                          <div class="tl-list">
+                            <div class="tl-item rv">
+                              <div class="tl-year">2021</div>
+                              <div class="tl-dot"></div>
+                              <div class="tl-content">
+                                <div class="tl-title">Création d'Impact Africa</div>
+                                <div class="tl-desc">Enregistrement de la S.A.S à Dakar-Yoff avec un capital de 1 000 000 F CFA. Début des activités de distribution de profilés aluminium et quincaillerie pour les professionnels du bâtiment.</div>
+                              </div>
+                            </div>
+                            <div class="tl-item rv d1">
+                              <div class="tl-year">2022</div>
+                              <div class="tl-dot"></div>
+                              <div class="tl-content">
+                                <div class="tl-title">Expansion du catalogue</div>
+                                <div class="tl-desc">Intégration des gammes complètes de systèmes moustiquaire KCL, joints d'étanchéité et galets réglables. Le catalogue passe à plus de 25 références actives.</div>
+                              </div>
+                            </div>
+                            <div class="tl-item rv d2">
+                              <div class="tl-year">2023</div>
+                              <div class="tl-dot"></div>
+                              <div class="tl-content">
+                                <div class="tl-title">Dépassement des 100 clients professionnels</div>
+                                <div class="tl-desc">Franchissement du cap des 100 clients actifs. Mise en place d'un service de livraison dédiée sur Dakar et lancement des comptes professionnels à tarifs préférentiels.</div>
+                              </div>
+                            </div>
+                            <div class="tl-item rv d3">
+                              <div class="tl-year">2024</div>
+                              <div class="tl-dot"></div>
+                              <div class="tl-content">
+                                <div class="tl-title">Partenariats stratégiques &amp; 35+ références</div>
+                                <div class="tl-desc">Signature de partenariats avec des fournisseurs internationaux de référence. Le catalogue atteint 35+ références couvrant tous les besoins de la menuiserie aluminium professionnelle.</div>
+                              </div>
+                            </div>
+                            <div class="tl-item rv d4">
+                              <div class="tl-year">2025</div>
+                              <div class="tl-dot"></div>
+                              <div class="tl-content">
+                                <div class="tl-title">200+ clients &amp; lancement digital</div>
+                                <div class="tl-desc">Impact Africa dépasse les 200 clients professionnels fidèles et lance sa présence digitale pour mieux servir ses partenaires à travers le Sénégal et l'Afrique de l'Ouest.</div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+
+                        <!-- VALEURS -->
+                        <section class="valeurs">
+                          <div class="rv"><div class="stag"><div class="stag-dot"></div><span>Ce qui nous guide</span></div>
+                          <h2 class="stitle">Nos <em>valeurs fondatrices</em></h2></div>
+                          <div class="val-grid">
+                            <div class="val-card rv">
+                              <div class="val-icon"><iconify-icon icon="mdi:medal-outline"></iconify-icon></div>
+                              <div class="val-title">Qualité sans compromis</div>
+                              <div class="val-desc">Chaque produit que nous distribuons est soigneusement sélectionné pour sa conformité aux standards internationaux et son adaptation au climat ouest-africain.</div>
+                            </div>
+                            <div class="val-card rv d1">
+                              <div class="val-icon"><iconify-icon icon="mdi:handshake-outline"></iconify-icon></div>
+                              <div class="val-title">Partenariat durable</div>
+                              <div class="val-desc">Nous construisons des relations à long terme avec nos clients et fournisseurs, basées sur la confiance, la transparence et le respect mutuel.</div>
+                            </div>
+                            <div class="val-card rv d2">
+                              <div class="val-icon"><iconify-icon icon="mdi:lightning-bolt-outline"></iconify-icon></div>
+                              <div class="val-title">Réactivité &amp; proximité</div>
+                              <div class="val-desc">Notre équipe dakaroise répond en moins de 24h à chaque demande. Livraison rapide, conseil immédiat, présence terrain — nous sommes là quand vous en avez besoin.</div>
+                            </div>
+                            <div class="val-card rv d1">
+                              <div class="val-icon"><iconify-icon icon="mdi:earth"></iconify-icon></div>
+                              <div class="val-title">Ancrage africain</div>
+                              <div class="val-desc">Fiers de notre identité sénégalaise, nous contribuons à structurer une filière aluminium forte et autonome en Afrique de l'Ouest.</div>
+                            </div>
+                            <div class="val-card rv d2">
+                              <div class="val-icon"><iconify-icon icon="mdi:lightbulb-outline"></iconify-icon></div>
+                              <div class="val-title">Expertise technique</div>
+                              <div class="val-desc">Notre équipe maîtrise parfaitement les spécificités techniques de chaque gamme pour vous conseiller avec précision sur chaque projet.</div>
+                            </div>
+                            <div class="val-card rv d3">
+                              <div class="val-icon"><iconify-icon icon="mdi:trending-up"></iconify-icon></div>
+                              <div class="val-title">Innovation continue</div>
+                              <div class="val-desc">Nous faisons évoluer notre catalogue et nos services en permanence pour anticiper les besoins du marché et proposer les meilleures solutions.</div>
+                            </div>
+                          </div>
+                        </section>
+
+                        <!-- EQUIPE -->
+                        <section class="equipe">
+                          <div class="rv"><div class="stag" style="background:rgba(139,207,52,.1);border-color:rgba(139,207,52,.25)"><div class="stag-dot"></div><span style="color:var(--lime)">L'équipe</span></div>
+                          <h2 class="stitle stitle-light">Les <em>hommes et femmes</em> derrière Impact Africa</h2></div>
+                          <div class="eq-grid">
+                            <div class="eq-card rv">
+                              <div class="eq-avatar"><iconify-icon icon="mdi:account-tie"></iconify-icon></div>
+                              <div class="eq-name">Nene Sall</div>
+                              <div class="eq-role">Directeur Commercial</div>
+                              <div class="eq-desc">Pilote les relations clients et le développement commercial en Afrique de l'Ouest.</div>
+                            </div>
+                            <div class="eq-card rv d1">
+                              <div class="eq-avatar"><iconify-icon icon="mdi:account-cog"></iconify-icon></div>
+                              <div class="eq-name">Expert Technique</div>
+                              <div class="eq-role">Conseil &amp; Expertise</div>
+                              <div class="eq-desc">Accompagne les professionnels dans le choix des produits et solutions techniques adaptés.</div>
+                            </div>
+                            <div class="eq-card rv d2">
+                              <div class="eq-avatar"><iconify-icon icon="mdi:package-variant"></iconify-icon></div>
+                              <div class="eq-name">Équipe Logistique</div>
+                              <div class="eq-role">Livraison &amp; Stock</div>
+                              <div class="eq-desc">Garantit la disponibilité des produits et des livraisons rapides sur tout Dakar.</div>
+                            </div>
+                            <div class="eq-card rv d3">
+                              <div class="eq-avatar"><iconify-icon icon="mdi:headset"></iconify-icon></div>
+                              <div class="eq-name">Service Client</div>
+                              <div class="eq-role">Support &amp; Suivi</div>
+                              <div class="eq-desc">Disponible pour répondre à toutes vos demandes, devis et réclamations en temps réel.</div>
+                            </div>
+                          </div>
+                        </section>
+
+                        <!-- CERTIFICATIONS -->
+                        <div class="certifs">
+                          <div class="rv"><div class="stag" style="background:rgba(139,207,52,.1);border-color:rgba(139,207,52,.2)"><div class="stag-dot"></div><span style="color:var(--lime)">Certifications</span></div>
+                          <h2 class="stitle stitle-light">Conformité &amp; <em>transparence</em></h2></div>
+                          <div class="cert-row">
+                            <div class="cert-item rv">
+                              <div class="cert-icon"><iconify-icon icon="mdi:shield-check"></iconify-icon></div>
+                              <div class="cert-name"><strong>NINEA Certifié</strong>NINEA : 008696083 2V5</div>
+                            </div>
+                            <div class="cert-item rv d1">
+                              <div class="cert-icon"><iconify-icon icon="mdi:file-document-check"></iconify-icon></div>
+                              <div class="cert-name"><strong>Immatriculation RCCM</strong>SN-DKR-2021-B-22923</div>
+                            </div>
+                            <div class="cert-item rv d2">
+                              <div class="cert-icon"><iconify-icon icon="mdi:bank"></iconify-icon></div>
+                              <div class="cert-name"><strong>Forme juridique</strong>S.A.S — Capital 1 000 000 F CFA</div>
+                            </div>
+                            <div class="cert-item rv d3">
+                              <div class="cert-icon"><iconify-icon icon="mdi:map-marker-check"></iconify-icon></div>
+                              <div class="cert-name"><strong>Siège social</strong>Yoff Ernam, Dakar — Sénégal</div>
+                            </div>
+                          </div>
+                        </div>
+                    <t t-call-assets="theme_impact_africa.assets_about" t-css="false"/>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

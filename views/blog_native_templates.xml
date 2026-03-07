@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="impact_africa_blog_index_assets" inherit_id="website_blog.blog_post_short" name="Impact Africa Blog Index Assets" priority="90">
+        <xpath expr="//t[@t-call='website_blog.index']" position="inside">
+            <t t-set="pageName" t-value="'impact-africa-blog'"/>
+        </xpath>
+        <xpath expr="//t[@t-set='head']" position="replace">
+            <t t-set="head">
+                <t t-out="head or ''"/>
+                <t t-call-assets="theme_impact_africa.assets_blog" t-js="false"/>
+                <link t-if="blog" t-att-href="'/blog/%s/feed' % slug(blog)" type="application/atom+xml" rel="alternate" title="Atom Feed"/>
+                <meta t-if="active_tag_ids" name="robots" t-attf-content="none"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="impact_africa_blog_index_hero" inherit_id="website_blog.blog_post_short" name="Impact Africa Blog Index Layout" priority="91">
+        <xpath expr="//div[@id='o_wblog_blog_top']" position="replace">
+            <div class="page-hero">
+                <div class="ph-tag">
+                    <div class="ph-tag-line"/>
+                    <span class="ph-tag-text">
+                        <t t-if="blog" t-out="blog.name"/>
+                        <t t-else="">Insights &amp; Actualites</t>
+                    </span>
+                </div>
+                <h1 class="ph-title">
+                    Le <em>blog</em><br/>Impact Africa
+                </h1>
+                <p class="ph-desc">
+                    <t t-if="blog and blog.subtitle" t-out="blog.subtitle"/>
+                    <t t-else="">Conseils techniques, tendances du secteur, actualites de la menuiserie aluminium et guides pratiques pour les professionnels du batiment en Afrique de l'Ouest.</t>
+                </p>
+                <div class="ph-meta">
+                    <div class="ph-meta-item">
+                        <iconify-icon icon="mdi:newspaper-variant-outline"/>
+                        <t t-out="search_count or len(posts)"/> articles publies
+                    </div>
+                    <div class="ph-meta-item">
+                        <iconify-icon icon="mdi:account-group-outline"/>
+                        Pour les professionnels
+                    </div>
+                    <div class="ph-meta-item">
+                        <iconify-icon icon="mdi:translate"/>
+                        En francais
+                    </div>
+                </div>
+                <div class="ph-bg">BLG</div>
+            </div>
+        </xpath>
+        <xpath expr="//t[@t-call='website_blog.blogs_nav']" position="replace">
+            <div class="filter-bar">
+                <a href="/blog" t-attf-class="filter-btn #{not blog and 'active' or ''}">
+                    <iconify-icon icon="mdi:view-grid-outline"/>
+                    Tous
+                </a>
+                <t t-foreach="blogs" t-as="nav_blog">
+                    <a t-attf-href="/blog/#{slug(nav_blog)}" t-attf-class="filter-btn #{blog and nav_blog.id == blog.id and 'active' or ''}">
+                        <iconify-icon icon="mdi:newspaper-variant-outline"/>
+                        <t t-out="nav_blog.name"/>
+                    </a>
+                </t>
+                <form t-att-action="blog and '/blog/%s' % slug(blog) or '/blog'" method="get" class="search-wrap">
+                    <iconify-icon icon="mdi:magnify" class="search-icon"/>
+                    <input type="text" name="search" class="search-inp" placeholder="Rechercher un article..." t-att-value="search or ''"/>
+                    <input t-if="date_begin" type="hidden" name="date_begin" t-att-value="date_begin"/>
+                    <input t-if="date_end" type="hidden" name="date_end" t-att-value="date_end"/>
+                </form>
+            </div>
+        </xpath>
+        <xpath expr="//section[@id='o_wblog_index_content']" position="replace">
+            <section class="blog-section">
+                <t t-if="posts">
+                    <t t-set="featured_post" t-value="posts[0]"/>
+                    <a class="blog-featured" t-attf-href="/blog/#{slug(featured_post.blog_id)}/#{slug(featured_post)}" id="featuredPost">
+                        <div class="bf-visual">
+                            <div class="bf-visual-inner">
+                                <div class="bf-visual-num">01</div>
+                                <div class="bf-visual-icon">
+                                    <iconify-icon icon="mdi:window-open-variant"/>
+                                </div>
+                            </div>
+                            <div class="bf-stripe"/>
+                        </div>
+                        <div class="bf-content">
+                            <div>
+                                <div class="bf-label">
+                                    <iconify-icon icon="mdi:star-outline"/>
+                                    Article a la une
+                                </div>
+                                <div class="bf-title" t-out="featured_post.name"/>
+                                <div class="bf-excerpt">
+                                    <t t-out="featured_post.teaser or featured_post.subtitle or ''"/>
+                                </div>
+                            </div>
+                            <div class="bf-footer">
+                                <div class="bf-author">
+                                    <div class="bf-avatar">
+                                        <iconify-icon icon="mdi:account"/>
+                                    </div>
+                                    <div class="bf-author-info">
+                                        <div class="bf-author-name" t-out="featured_post.author_name"/>
+                                        <div class="bf-author-date">
+                                            <span t-field="featured_post.post_date" t-options="{'format': 'long', 'date_only': 'true'}"/>
+                                            <t t-if="featured_post.visits"> · <t t-out="featured_post.visits"/> vues</t>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bf-read-btn">Lire l'article<iconify-icon icon="mdi:arrow-right"/></div>
+                            </div>
+                        </div>
+                    </a>
+                </t>
+
+                <div class="articles-grid" id="articlesGrid">
+                    <t t-foreach="posts[1:]" t-as="blog_post">
+                        <a class="article-card" t-attf-href="/blog/#{slug(blog_post.blog_id)}/#{slug(blog_post)}" t-att-data-cat="slug(blog_post.blog_id)">
+                            <div class="ac-header">
+                                <div class="ac-header-bg"
+                                     t-att-style="'background:%s' % ([
+                                        'linear-gradient(145deg,#0C1C22,#1A3540)',
+                                        'linear-gradient(145deg,#0F2018,#1E3828)',
+                                        'linear-gradient(145deg,#1A2010,#2E3C18)',
+                                        'linear-gradient(145deg,#0A1828,#182C3A)',
+                                        'linear-gradient(145deg,#1C1810,#342C18)'
+                                     ][blog_post_index % 5])"/>
+                                <div class="ac-num" t-out="'%02d' % (blog_post_index + 2)"/>
+                                <div class="ac-icon">
+                                    <iconify-icon t-att-icon="[
+                                        'mdi:seal-variant',
+                                        'mdi:book-open-page-variant-outline',
+                                        'mdi:trending-up',
+                                        'mdi:cog-outline',
+                                        'mdi:bullhorn-outline'
+                                    ][blog_post_index % 5]"/>
+                                </div>
+                                <div class="ac-cat">
+                                    <iconify-icon icon="mdi:newspaper-variant-outline"/>
+                                    <t t-out="blog_post.blog_id.name"/>
+                                </div>
+                                <div class="ac-read-time">
+                                    <iconify-icon icon="mdi:eye-outline"/>
+                                    <t t-out="blog_post.visits"/> vues
+                                </div>
+                            </div>
+                            <div class="ac-body">
+                                <div class="ac-meta">
+                                    <span class="ac-date">
+                                        <span t-field="blog_post.post_date" t-options="{'format': 'MMM d, yyyy'}"/>
+                                    </span>
+                                </div>
+                                <div class="ac-title" t-out="blog_post.name"/>
+                                <div class="ac-excerpt">
+                                    <t t-out="blog_post.teaser or blog_post.subtitle or ''"/>
+                                </div>
+                                <div class="ac-footer">
+                                    <div class="ac-author">
+                                        <div class="ac-av"><iconify-icon icon="mdi:account"/></div>
+                                        <span class="ac-author-name" t-out="blog_post.author_name"/>
+                                    </div>
+                                    <div class="ac-arrow">Lire<iconify-icon icon="mdi:chevron-right"/></div>
+                                </div>
+                            </div>
+                        </a>
+                    </t>
+                </div>
+
+                <div class="load-more-wrap" t-if="pager and pager['page_count'] &gt; 1">
+                    <div class="impact-blog-pager">
+                        <t t-call="website.pager">
+                            <t t-set="classname" t-valuef="justify-content-center"/>
+                            <t t-set="extraLinkClass" t-valuef="post_link"/>
+                        </t>
+                    </div>
+                </div>
+
+                <div class="newsletter">
+                    <div class="nl-tag"><iconify-icon icon="mdi:email-outline"/>Newsletter</div>
+                    <h2 class="nl-title">Restez informe des <em>dernieres<br/>actualites</em> du secteur</h2>
+                    <p class="nl-desc">Recevez chaque mois nos guides techniques, tendances du marche et nouveautes produits directement dans votre boite mail.</p>
+                    <div class="nl-form">
+                        <input type="email" class="nl-input" placeholder="votre@email.sn"/>
+                        <button class="nl-submit" onclick="subscribeNL()"><iconify-icon icon="mdi:send-outline"/>S'abonner</button>
+                    </div>
+                </div>
+
+                <div class="notif" id="notif"></div>
+                <t t-call-assets="theme_impact_africa.assets_blog" t-css="false"/>
+            </section>
+        </xpath>
+    </template>
+
+    <template id="impact_africa_blog_article_assets" inherit_id="website_blog.blog_post_complete" name="Impact Africa Blog Article Assets" priority="90">
+        <xpath expr="//t[@t-call='website_blog.index']" position="inside">
+            <t t-set="pageName" t-value="'impact-africa-blog-article'"/>
+            <t t-set="head">
+                <t t-out="head or ''"/>
+                <t t-call-assets="theme_impact_africa.assets_blog_article" t-js="false"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="impact_africa_blog_article_layout" inherit_id="website_blog.blog_post_complete" name="Impact Africa Blog Article Layout" priority="91">
+        <xpath expr="//section[@id='o_wblog_post_top']" position="replace">
+            <div class="breadcrumb">
+                <a href="/">Accueil</a>
+                <iconify-icon icon="mdi:chevron-right"/>
+                <a t-attf-href="/blog/#{slug(blog)}" t-out="blog.name"/>
+                <iconify-icon icon="mdi:chevron-right"/>
+                <span t-out="blog_post.name"/>
+            </div>
+        </xpath>
+        <xpath expr="//section[@id='o_wblog_post_main']" position="replace">
+            <div class="article-wrap">
+                <article class="article-main">
+                    <div class="article-hero-visual">
+                        <div class="ahv-num">01</div>
+                        <div class="ahv-icon"><iconify-icon icon="mdi:window-open-variant"/></div>
+                        <div class="ahv-stripe"/>
+                        <div class="ahv-cat">
+                            <iconify-icon icon="mdi:tag-outline"/>
+                            <t t-if="blog_post.tag_ids" t-out="blog_post.tag_ids[0].name"/>
+                            <t t-else="" t-out="blog.name"/>
+                        </div>
+                        <div class="ahv-read">
+                            <iconify-icon icon="mdi:eye-outline"/>
+                            <t t-out="blog_post.visits"/> vues
+                        </div>
+                    </div>
+
+                    <div class="article-meta">
+                        <div class="article-author">
+                            <div class="article-av"><iconify-icon icon="mdi:account"/></div>
+                            <div>
+                                <div class="article-author-name" t-out="blog_post.author_name"/>
+                                <div class="article-author-role">Auteur Impact Africa</div>
+                            </div>
+                        </div>
+                        <div class="article-meta-right">
+                            <div class="meta-pill"><iconify-icon icon="mdi:calendar-outline"/><span t-field="blog_post.post_date" t-options="{'format': 'long', 'date_only': 'true'}"/></div>
+                            <div class="meta-pill"><iconify-icon icon="mdi:folder-outline"/><span t-out="blog.name"/></div>
+                            <div class="meta-pill"><iconify-icon icon="mdi:eye-outline"/><t t-out="blog_post.visits"/> vues</div>
+                        </div>
+                    </div>
+
+                    <h1 class="article-title" t-out="blog_post.name"/>
+                    <p class="article-lead" t-if="blog_post.subtitle" t-out="blog_post.subtitle"/>
+
+                    <div class="article-body" t-field="blog_post.content"/>
+
+                    <div class="article-tags" t-if="blog_post.tag_ids">
+                        <span class="tag-label">Tags :</span>
+                        <t t-foreach="blog_post.tag_ids" t-as="one_tag">
+                            <a class="tag" t-attf-href="#{blog_url(tag=tags_list([], one_tag.id), date_begin=False, date_end=False)}">
+                                <iconify-icon icon="mdi:tag-outline"/>
+                                <t t-out="one_tag.name"/>
+                            </a>
+                        </t>
+                    </div>
+
+                    <div class="article-share">
+                        <span class="share-label">Partager :</span>
+                        <a t-attf-href="https://wa.me/?text=#{request.httprequest.url}" target="_blank" class="share-btn"><iconify-icon icon="mdi:whatsapp"/>WhatsApp</a>
+                        <a t-attf-href="https://www.linkedin.com/sharing/share-offsite/?url=#{request.httprequest.url}" target="_blank" class="share-btn"><iconify-icon icon="mdi:linkedin"/>LinkedIn</a>
+                        <a t-attf-href="https://www.facebook.com/sharer/sharer.php?u=#{request.httprequest.url}" target="_blank" class="share-btn"><iconify-icon icon="mdi:facebook"/>Facebook</a>
+                        <a href="#" class="share-btn" onclick="copyLink(event)"><iconify-icon icon="mdi:link-variant"/>Copier le lien</a>
+                    </div>
+                </article>
+
+                <aside class="article-sidebar">
+                    <div class="sidebar-sticky">
+                        <div class="sidebar-widget">
+                            <div class="sw-title"><iconify-icon icon="mdi:newspaper-variant-outline"/>Ce blog</div>
+                            <div class="sw-body">
+                                <p style="font-size:13px;color:var(--gray);line-height:1.7;">
+                                    <t t-out="blog.subtitle or 'Conseils techniques, actualites et analyses terrain pour les professionnels de la menuiserie aluminium.'"/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="cta-widget">
+                            <div class="cw-icon"><iconify-icon icon="mdi:file-document-edit-outline"/></div>
+                            <div class="cw-title">Besoin d'un devis personnalise ?</div>
+                            <div class="cw-desc">Notre equipe vous repond sous 24h avec un chiffrage adapte a votre projet.</div>
+                            <a href="/contact" class="cw-btn"><iconify-icon icon="mdi:arrow-right"/>Demander un devis</a>
+                        </div>
+
+                        <div class="sidebar-widget" t-if="next_post">
+                            <div class="sw-title"><iconify-icon icon="mdi:skip-next-outline"/>Article suivant</div>
+                            <div class="sw-body">
+                                <a t-attf-href="/blog/#{slug(next_post.blog_id)}/#{slug(next_post)}" class="related-article">
+                                    <div class="ra-icon" style="background:linear-gradient(135deg,#0C1C22,#1A3540)">
+                                        <iconify-icon icon="mdi:newspaper-variant-outline" style="color:var(--lime)"/>
+                                    </div>
+                                    <div>
+                                        <div class="ra-title" t-out="next_post.name"/>
+                                        <div class="ra-meta"><iconify-icon icon="mdi:calendar-outline"/><span t-field="next_post.post_date" t-options="{'format': 'MMM d, yyyy'}"/></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <div class="sw-title"><iconify-icon icon="mdi:phone-outline"/>Contactez-nous</div>
+                            <div class="sw-body" style="display:flex;flex-direction:column;gap:10px">
+                                <a href="tel:+221782378888" style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-deep);text-decoration:none;font-weight:600"><iconify-icon icon="mdi:phone" style="color:var(--lime);font-size:16px"/>+221 78 237 88 88</a>
+                                <a href="mailto:contact@impact-africa.sn" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--gray);text-decoration:none"><iconify-icon icon="mdi:email-outline" style="color:var(--lime);font-size:15px"/>contact@impact-africa.sn</a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </xpath>
+        <xpath expr="//section[@id='o_wblog_post_footer']" position="replace">
+            <div>
+                <div class="article-nav">
+                    <a t-attf-href="/blog/#{slug(blog)}" class="an-card">
+                        <div class="an-dir"><iconify-icon icon="mdi:arrow-left"/>Retour au blog</div>
+                        <div class="an-title">Voir tous les articles de <t t-out="blog.name"/></div>
+                    </a>
+                    <a t-if="next_post" t-attf-href="/blog/#{slug(next_post.blog_id)}/#{slug(next_post)}" class="an-card next">
+                        <div class="an-dir">Article suivant<iconify-icon icon="mdi:arrow-right"/></div>
+                        <div class="an-title" t-out="next_post.name"/>
+                    </a>
+                </div>
+                <t t-call-assets="theme_impact_africa.assets_blog_article" t-css="false"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

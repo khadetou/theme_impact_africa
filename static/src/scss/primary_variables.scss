@@ -1,0 +1,25 @@
+$o-color-palettes: map-merge(
+    $o-color-palettes,
+    (
+        'impact_africa': (
+            'o-color-1': #8BCF34,
+            'o-color-2': #66C97A,
+            'o-color-3': #3EC99A,
+            'o-color-4': #F5F8F6,
+            'o-color-5': #0C1C22,
+            'menu': 5,
+            'footer': 5,
+            'copyright': 4,
+        ),
+    )
+);
+
+$o-selected-color-palettes-names: append($o-selected-color-palettes-names, 'impact_africa');
+
+$o-website-values-palettes: (
+    (
+        'color-palettes-name': 'impact_africa',
+        'font': 'DM Sans',
+        'headings-font': 'Cormorant Garamond',
+    ),
+);

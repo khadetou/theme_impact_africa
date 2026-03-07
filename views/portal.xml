@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="impact_africa_portal_layout" inherit_id="portal.portal_layout" name="Impact Africa Portal Layout" priority="90">
+        <xpath expr="//t[@t-call='portal.frontend_layout']" position="replace">
+            <t t-call="portal.frontend_layout">
+                <t t-set="is_portal" t-value="True"/>
+                <t t-set="no_footer" t-value="True"/>
+                <t t-set="pageName" t-value="'impact-africa-portal'"/>
+
+                <div id="wrap" class="o_portal_wrap impact-portal-wrap">
+                    <section class="impact-portal-stage">
+                        <div class="impact-portal-stage-head">
+                            <div class="impact-portal-stage-copy">
+                                <span class="impact-portal-eyebrow">Espace client</span>
+                                <h1 t-if="my_details">Mon compte</h1>
+                                <h1 t-elif="additional_title" t-out="additional_title"/>
+                                <h1 t-else="">Portail client</h1>
+                                <p t-if="my_details">Retrouvez vos commandes, factures, adresses et parametres de securite dans un espace concu pour vos equipes.</p>
+                                <p t-else="">Consultez vos informations professionnelles, vos documents et vos interactions avec Impact Africa depuis un tableau de bord unifie.</p>
+                            </div>
+                            <div class="impact-portal-stage-meta">
+                                <span class="impact-portal-meta-pill">Acces 24/7</span>
+                                <span class="impact-portal-meta-pill">Support professionnel</span>
+                                <span class="impact-portal-meta-pill">Suivi centralise</span>
+                            </div>
+                        </div>
+
+                        <div t-if="not no_breadcrumbs and not my_details and not breadcrumbs_searchbar" class="impact-portal-breadcrumbs">
+                            <t t-call="portal.portal_breadcrumbs"/>
+                            <t t-if="prev_record or next_record" t-call="portal.record_pager"/>
+                        </div>
+
+                        <div t-if="my_details" class="impact-portal-grid">
+                            <div class="impact-portal-main">
+                                <t t-out="0"/>
+                            </div>
+                            <aside class="impact-portal-side">
+                                <t t-call="portal.side_content"/>
+                            </aside>
+                        </div>
+                        <div t-else="" class="impact-portal-main impact-portal-main-single">
+                            <t t-out="0"/>
+                        </div>
+
+                        <div class="impact-portal-footnote">
+                            <span>Impact Africa Dakar</span>
+                            <span>NINEA 008696083 2V5</span>
+                            <span><a href="/contact">Contacter l'equipe</a></span>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="impact_africa_portal_my_home" inherit_id="portal.portal_my_home" name="Impact Africa Portal Home" priority="90">
+        <xpath expr="//div[hasclass('o_portal_my_home')]" position="attributes">
+            <attribute name="class" add="impact-portal-home" separator=" "/>
+        </xpath>
+        <xpath expr="//div[@id='oe_structure_portal_my_home_1']" position="after">
+            <div class="impact-portal-home-hero">
+                <div class="impact-portal-home-copy">
+                    <span class="impact-portal-eyebrow">Tableau de bord</span>
+                    <h2>Bonjour, <t t-out="(user_id.name or '').split(' ')[0] or user_id.name"/></h2>
+                    <p>Suivez vos commandes et gardez vos informations a jour depuis un portail concu pour vos operations terrain.</p>
+                </div>
+                <div class="impact-portal-home-badges">
+                    <div class="impact-portal-badge">
+                        <strong>24h</strong>
+                        <span>Disponibilite</span>
+                    </div>
+                    <div class="impact-portal-badge">
+                        <strong>1</strong>
+                        <span>Espace unifie</span>
+                    </div>
+                    <div class="impact-portal-badge">
+                        <strong>Pro</strong>
+                        <span>Support dedie</span>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="attributes">
+            <attribute name="class" add="impact-portal-docs" separator=" "/>
+        </xpath>
+        <xpath expr="//div[@id='portal_alert_category']" position="attributes">
+            <attribute name="class" remove="g-2 mt-3" separator=" "/>
+            <attribute name="class" add="g-3 mt-0" separator=" "/>
+        </xpath>
+        <xpath expr="//div[@id='portal_client_category']" position="attributes">
+            <attribute name="class" remove="g-2 mt-3" separator=" "/>
+            <attribute name="class" add="g-3 mt-0" separator=" "/>
+        </xpath>
+        <xpath expr="//div[@id='portal_service_category']" position="attributes">
+            <attribute name="class" remove="g-2 mt-3" separator=" "/>
+            <attribute name="class" add="g-3 mt-0" separator=" "/>
+        </xpath>
+        <xpath expr="//div[@id='portal_vendor_category']" position="attributes">
+            <attribute name="class" remove="g-2 mt-3" separator=" "/>
+            <attribute name="class" add="g-3 mt-0" separator=" "/>
+        </xpath>
+        <xpath expr="//div[@id='portal_common_category']" position="attributes">
+            <attribute name="class" remove="g-2 mt-3" separator=" "/>
+            <attribute name="class" add="g-3 mt-0" separator=" "/>
+        </xpath>
+        <xpath expr="//div[@id='portal_common_category']/t[1]/t[@t-set='title']" position="replace">
+            <t t-set="title">Adresses</t>
+        </xpath>
+        <xpath expr="//div[@id='portal_common_category']/t[1]/t[@t-set='text']" position="replace">
+            <t t-set="text">Ajoutez, supprimez ou modifiez vos adresses de livraison et de facturation.</t>
+        </xpath>
+        <xpath expr="//div[@id='portal_common_category']/t[2]/t[@t-set='title']" position="replace">
+            <t t-set="title">Connexion &amp; Securite</t>
+        </xpath>
+        <xpath expr="//div[@id='portal_common_category']/t[2]/t[@t-set='text']" position="replace">
+            <t t-set="text">Mettez a jour vos parametres de securite et vos acces professionnels.</t>
+        </xpath>
+        <xpath expr="//div[@id='portal_common_category']" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/account/static/src/img/bill.svg'"/>
+                <t t-set="title">Nos factures</t>
+                <t t-set="text">Consultez, telechargez ou reglez les factures Impact Africa depuis votre espace client.</t>
+                <t t-set="url" t-value="'/my/invoices?filterby=bills'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="impact_africa_portal_docs_entry" inherit_id="portal.portal_docs_entry" name="Impact Africa Portal Docs Entry" priority="90">
+        <xpath expr="//div[contains(@t-att-class, 'o_portal_index_card')]" position="attributes">
+            <attribute name="t-att-class">'o_portal_index_card impact-portal-index-card ' +  ('' if force_show or config_card else 'd-none ') + ('col-12 order-0' if show_count else 'col-md-6 order-2')</attribute>
+        </xpath>
+        <xpath expr="//a" position="attributes">
+            <attribute name="t-attf-class">impact-portal-doc-link text-decoration-none #{bg_color if bg_color else 'bg-100'}</attribute>
+            <attribute name="t-att-title">False</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('o_portal_icon')]" position="attributes">
+            <attribute name="class" add="impact-portal-doc-icon" separator=" "/>
+        </xpath>
+        <xpath expr="//div[contains(@t-att-class, 'alert-link')]" position="attributes">
+            <attribute name="class" add="impact-portal-doc-body" separator=" "/>
+        </xpath>
+        <xpath expr="//div[contains(@t-attf-class, 'mt-0 mb-1 fs-5 fw-normal lh-1')]" position="attributes">
+            <attribute name="class" add="impact-portal-doc-title" separator=" "/>
+        </xpath>
+        <xpath expr="//div[hasclass('opacity-75')]" position="attributes">
+            <attribute name="class" remove="opacity-75" separator=" "/>
+            <attribute name="class" add="impact-portal-doc-copy" separator=" "/>
+        </xpath>
+        <xpath expr="//div[hasclass('impact-portal-doc-copy')]" position="after">
+            <div class="impact-portal-doc-foot">
+                <span>Acceder</span>
+                <i class="fa fa-arrow-right"/>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="impact_africa_portal_side_content" inherit_id="portal.side_content" name="Impact Africa Portal Side Content" priority="90">
+        <xpath expr="." position="replace">
+            <div class="impact-portal-profile-card">
+                <div class="impact-portal-profile-top">
+                    <img class="impact-portal-profile-avatar" t-att-src="image_data_uri(user_id.partner_id.avatar_128)" alt="Contact"/>
+                    <div class="impact-portal-profile-copy">
+                        <span class="impact-portal-eyebrow">Profil</span>
+                        <h3 t-out="user_id.name"/>
+                        <p t-if="user_id.company_name" t-out="user_id.company_name"/>
+                    </div>
+                </div>
+
+                <div class="impact-portal-profile-list">
+                    <div t-if="user_id.partner_id.phone" class="impact-portal-contact-row">
+                        <i class="fa fa-phone"/>
+                        <span t-out="user_id.partner_id.phone"/>
+                    </div>
+                    <div t-if="user_id.partner_id.email" class="impact-portal-contact-row">
+                        <i class="fa fa-envelope"/>
+                        <span t-out="user_id.partner_id.email"/>
+                    </div>
+                    <div t-if="user_id.partner_id.contact_address" class="impact-portal-contact-row impact-portal-contact-row-address">
+                        <i class="fa fa-map-marker"/>
+                        <span t-out="user_id.partner_id.contact_address"/>
+                    </div>
+                </div>
+
+                <div class="impact-portal-quick-actions">
+                    <a href="/my/account" class="impact-portal-side-btn impact-portal-side-btn-secondary">
+                        <i class="fa fa-pencil"/>
+                        <span>Modifier mes informations</span>
+                    </a>
+                    <a href="/contact" class="impact-portal-side-btn impact-portal-side-btn-primary">
+                        <i class="fa fa-file-text-o"/>
+                        <span>Demander un devis</span>
+                    </a>
+                </div>
+
+                <div class="impact-portal-support" t-if="sales_user">
+                    <span class="impact-portal-support-label">Votre contact Impact Africa</span>
+                    <strong t-out="sales_user.name"/>
+                    <a t-if="sales_user.email_normalized" t-att-href="'mailto:' + sales_user.email" t-out="sales_user.email"/>
+                    <span t-if="sales_user.phone" t-out="sales_user.phone"/>
+                    <span t-if="sales_user.city" t-out="sales_user.city"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="impact_africa_portal_record_sidebar" inherit_id="portal.portal_record_sidebar" name="Impact Africa Portal Record Sidebar" priority="90">
+        <xpath expr="//div[contains(@class, 'd-none d-lg-block mt-5 small text-center text-muted')]" position="replace"/>
+    </template>
+
+    <template id="impact_africa_portal_invoice_page" inherit_id="account.portal_invoice_page" name="Impact Africa Portal Invoice Page" priority="90">
+        <xpath expr="//t[@t-call='portal.portal_record_sidebar']/t[@t-set='classes']" position="replace">
+            <t t-set="classes" t-value="'col-12 col-lg-5 col-xl-4 col-xxl-4 d-print-none'"/>
+        </xpath>
+        <xpath expr="//div[@id='invoice_content']" position="attributes">
+            <attribute name="class">o_portal_content impact-portal-record-content col-12 col-lg-7 col-xl-8 col-xxl-8</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('o_portal_invoice_sidebar')]" position="attributes">
+            <attribute name="class" add="impact-portal-invoice-layout" separator=" "/>
+        </xpath>
+    </template>
+
+    <template id="impact_africa_portal_my_invoices" inherit_id="account.portal_my_invoices" name="Impact Africa Portal My Invoices" priority="90">
+        <xpath expr="//t[@t-if='invoices' and @t-call='portal.portal_table']" position="inside">
+            <t t-set="classes" t-value="'impact-portal-invoices-table'"/>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="impact_africa_homepage" name="Impact Africa Homepage" inherit_id="website.homepage">
+        <xpath expr="//t[@t-call='website.layout']" position="replace">
+            <t t-call="website.layout">
+                <t t-set="pageName" t-value="'impact-africa-homepage'"/>
+                <t t-set="title" t-value="'Impact Africa — Menuiserie Aluminium &amp; Vitrerie · Dakar'"/>
+                <t t-set="head">
+                    <t t-call-assets="theme_impact_africa.assets_index" t-js="false"/>
+                </t>
+                <div id="wrap" class="oe_structure">
+                        <!-- ═══ HERO ══════════════════════════════════════════════ -->
+                        <section class="hero">
+
+                          <!-- LEFT PANEL -->
+                          <div class="hero-left">
+                            <div class="hero-bg-num">IA</div>
+
+                            <div class="hero-year-tag">
+                              <div class="hero-year-line"></div>
+                              <span>Dakar · Sénégal · Est. 2021</span>
+                            </div>
+
+                            <div class="hero-copy-panel">
+                              <div class="hero-copy-top">
+                                <div class="hero-kicker">
+                                  <span class="hero-kicker-dot"></span>
+                                  Menuiserie &amp; Vitrerie Professionnelle
+                                </div>
+                                <div class="hero-inline-note">Solutions techniques pour artisans, entreprises et projets premium.</div>
+                              </div>
+
+                              <h1 class="hero-title">
+                                <strong>Menuiserie &amp; Vitrerie</strong>
+                                L'art de<br />
+                                <em>l'aluminium</em>
+                              </h1>
+
+                              <p class="hero-desc">
+                                Fournisseur spécialisé de profilés aluminium, systèmes moustiquaire, quincaillerie et accessoires d'étanchéité — pour les professionnels du bâtiment en Afrique de l'Ouest.
+                              </p>
+
+                              <div class="hero-proof-grid">
+                                <div class="hero-proof-card">
+                                  <span class="hero-proof-label">Stock immédiat</span>
+                                  <strong>35+ références</strong>
+                                  <p>Profilés, accessoires et systèmes KCL disponibles à Dakar.</p>
+                                </div>
+                                <div class="hero-proof-card">
+                                  <span class="hero-proof-label">Service pro</span>
+                                  <strong>Réponse rapide</strong>
+                                  <p>Conseil, devis et livraison pour vos chantiers en 24 à 48h.</p>
+                                </div>
+                              </div>
+
+                              <div class="hero-ctas">
+                                <a href="/#products" class="cta-primary"><iconify-icon icon="mdi:view-grid-outline" style="font-size:16px"></iconify-icon>Explorer nos produits</a>
+                                <a href="/#about" class="cta-ghost"><span></span>Notre histoire</a>
+                              </div>
+                            </div>
+
+                            <div class="hero-loc">
+                              <div class="hero-loc-l">
+                                <div class="hero-loc-dot"></div>
+                                <span class="hero-loc-text">Yoff Ernam, Rte de l'Aéroport N°93 — Dakar</span>
+                              </div>
+                              <span class="hero-loc-r">NINEA 008696083</span>
+                            </div>
+                          </div>
+
+                          <!-- RIGHT PANEL -->
+                          <div class="hero-right">
+                            <div class="hr-photo"></div>
+                            <div class="hr-grid"></div>
+                            <div class="hr-stripe"></div>
+                            <div class="hr-tech-card">
+                              <span class="hr-tech-kicker">Configuration</span>
+                              <strong>Série KCL Premium</strong>
+                              <p>Dormant moustiquaire SCVJ, lecture technique et finitions haut de gamme.</p>
+                            </div>
+
+                            <svg class="hr-elevation" viewBox="0 0 460 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="40" y="40" width="380" height="480" stroke="rgba(255,255,255,.05)" stroke-width="1" fill="none"/>
+                              <rect x="70" y="80" width="320" height="420" stroke="rgba(255,255,255,.22)" stroke-width="9" fill="rgba(255,255,255,.015)" rx="1"/>
+                              <rect x="70" y="80" width="320" height="420" stroke="rgba(255,255,255,.08)" stroke-width="1" fill="none"/>
+                              <rect x="226" y="80" width="8" height="420" fill="rgba(255,255,255,.18)"/>
+                              <rect x="70" y="240" width="320" height="8" fill="rgba(255,255,255,.15)"/>
+                              <rect x="75" y="85" width="145" height="149" fill="rgba(62,201,154,.04)"/>
+                              <rect x="239" y="85" width="145" height="149" fill="rgba(139,207,52,.03)"/>
+                              <rect x="75" y="254" width="145" height="240" fill="rgba(139,207,52,.03)"/>
+                              <rect x="239" y="254" width="145" height="240" fill="rgba(62,201,154,.04)"/>
+                              <path d="M80 90 L160 90 L130 150 L80 150Z" fill="rgba(255,255,255,.025)"/>
+                              <path d="M244 90 L290 90 L270 130 L244 130Z" fill="rgba(255,255,255,.02)"/>
+                              <rect x="207" y="220" width="46" height="12" rx="2" fill="rgba(139,207,52,.75)"/>
+                              <circle cx="218" cy="226" r="5" fill="rgba(255,255,255,.55)"/>
+                              <rect x="70" y="80" width="14" height="14" fill="rgba(139,207,52,.35)"/>
+                              <rect x="376" y="80" width="14" height="14" fill="rgba(139,207,52,.35)"/>
+                              <rect x="70" y="486" width="14" height="14" fill="rgba(139,207,52,.35)"/>
+                              <rect x="376" y="486" width="14" height="14" fill="rgba(139,207,52,.35)"/>
+                              <g opacity="0.055">
+                                <line x1="239" y1="254" x2="239" y2="494" stroke="#fff" stroke-width="1"/>
+                                <line x1="255" y1="254" x2="255" y2="494" stroke="#fff" stroke-width=".6"/><line x1="271" y1="254" x2="271" y2="494" stroke="#fff" stroke-width=".6"/>
+                                <line x1="287" y1="254" x2="287" y2="494" stroke="#fff" stroke-width=".6"/><line x1="303" y1="254" x2="303" y2="494" stroke="#fff" stroke-width=".6"/>
+                                <line x1="319" y1="254" x2="319" y2="494" stroke="#fff" stroke-width=".6"/><line x1="335" y1="254" x2="335" y2="494" stroke="#fff" stroke-width=".6"/>
+                                <line x1="351" y1="254" x2="351" y2="494" stroke="#fff" stroke-width=".6"/>
+                                <line x1="239" y1="270" x2="384" y2="270" stroke="#fff" stroke-width=".6"/><line x1="239" y1="286" x2="384" y2="286" stroke="#fff" stroke-width=".6"/>
+                                <line x1="239" y1="302" x2="384" y2="302" stroke="#fff" stroke-width=".6"/><line x1="239" y1="318" x2="384" y2="318" stroke="#fff" stroke-width=".6"/>
+                                <line x1="239" y1="334" x2="384" y2="334" stroke="#fff" stroke-width=".6"/><line x1="239" y1="350" x2="384" y2="350" stroke="#fff" stroke-width=".6"/>
+                                <line x1="239" y1="366" x2="384" y2="366" stroke="#fff" stroke-width=".6"/><line x1="239" y1="382" x2="384" y2="382" stroke="#fff" stroke-width=".6"/>
+                                <line x1="239" y1="398" x2="384" y2="398" stroke="#fff" stroke-width=".6"/><line x1="239" y1="414" x2="384" y2="414" stroke="#fff" stroke-width=".6"/>
+                                <line x1="239" y1="430" x2="384" y2="430" stroke="#fff" stroke-width=".6"/><line x1="239" y1="446" x2="384" y2="446" stroke="#fff" stroke-width=".6"/>
+                                <line x1="239" y1="462" x2="384" y2="462" stroke="#fff" stroke-width=".6"/><line x1="239" y1="478" x2="384" y2="478" stroke="#fff" stroke-width=".6"/>
+                              </g>
+                              <line x1="56" y1="80" x2="56" y2="500" stroke="rgba(139,207,52,.18)" stroke-width=".7" stroke-dasharray="3 4"/>
+                              <line x1="50" y1="80" x2="62" y2="80" stroke="rgba(139,207,52,.28)" stroke-width=".7"/>
+                              <line x1="50" y1="500" x2="62" y2="500" stroke="rgba(139,207,52,.28)" stroke-width=".7"/>
+                              <text x="44" y="294" fill="rgba(139,207,52,.32)" font-size="9" font-family="monospace" transform="rotate(-90,44,294)">H = 2400 mm</text>
+                              <line x1="70" y1="524" x2="390" y2="524" stroke="rgba(139,207,52,.18)" stroke-width=".7" stroke-dasharray="3 4"/>
+                              <line x1="70" y1="518" x2="70" y2="530" stroke="rgba(139,207,52,.28)" stroke-width=".7"/>
+                              <line x1="390" y1="518" x2="390" y2="530" stroke="rgba(139,207,52,.28)" stroke-width=".7"/>
+                              <text x="230" y="542" fill="rgba(139,207,52,.32)" font-size="9" font-family="monospace" text-anchor="middle">L = 1500 mm</text>
+                              <text x="230" y="32" fill="rgba(255,255,255,.1)" font-size="8.5" font-family="monospace" letter-spacing="4" text-anchor="middle">SÉRIE KCL — DORMANT MOUSTIQUAIRE SCVJ</text>
+                            </svg>
+
+                            <div class="hr-corner-tag">
+                              <div class="hr-corner-num">KCL</div>
+                              <div class="hr-corner-label">Série Premium</div>
+                            </div>
+
+                            <div class="hr-info" style="animation:fadeUp .6s ease both">
+                              <div class="hr-info-row">
+                                <div class="hr-stat"><div class="hr-stat-n">35<em>+</em></div><div class="hr-stat-l">Références</div></div>
+                                <div class="hr-stat"><div class="hr-stat-n">24<em>h</em></div><div class="hr-stat-l">Livraison</div></div>
+                                <div class="hr-stat"><div class="hr-stat-n">200<em>+</em></div><div class="hr-stat-l">Clients pro</div></div>
+                              </div>
+                            </div>
+
+                            <div class="hero-scroll">
+                              <div class="scroll-line"></div>
+                              <div class="scroll-text">Défiler</div>
+                            </div>
+                          </div>
+
+                        </section>
+
+                        <!-- ═══ MARQUEE ═══════════════════════════════════════════ -->
+                        <div class="marquee">
+                          <div class="marquee-track">
+                            <div class="marquee-item"><span>Profilés Aluminium</span><div class="mq-dot"></div></div>
+                            <div class="marquee-item"><span>Systèmes Moustiquaire</span><div class="mq-dot"></div></div>
+                            <div class="marquee-item"><span>Quincaillerie Spécialisée</span><div class="mq-dot"></div></div>
+                            <div class="marquee-item"><span>Joints d'Étanchéité</span><div class="mq-dot"></div></div>
+                            <div class="marquee-item"><span>Dormants &amp; Ouvrants</span><div class="mq-dot"></div></div>
+                            <div class="marquee-item"><span>Traverses &amp; Rives</span><div class="mq-dot"></div></div>
+                            <div class="marquee-item"><span>Rails &amp; Galets</span><div class="mq-dot"></div></div>
+                            <div class="marquee-item"><span>Livraison Dakar</span><div class="mq-dot"></div></div>
+                            <div class="marquee-item"><span>Profilés Aluminium</span><div class="mq-dot"></div></div>
+                            <div class="marquee-item"><span>Systèmes Moustiquaire</span><div class="mq-dot"></div></div>
+                            <div class="marquee-item"><span>Quincaillerie Spécialisée</span><div class="mq-dot"></div></div>
+                            <div class="marquee-item"><span>Joints d'Étanchéité</span><div class="mq-dot"></div></div>
+                            <div class="marquee-item"><span>Dormants &amp; Ouvrants</span><div class="mq-dot"></div></div>
+                            <div class="marquee-item"><span>Traverses &amp; Rives</span><div class="mq-dot"></div></div>
+                            <div class="marquee-item"><span>Rails &amp; Galets</span><div class="mq-dot"></div></div>
+                            <div class="marquee-item"><span>Livraison Dakar</span><div class="mq-dot"></div></div>
+                          </div>
+                        </div>
+
+                        <!-- ═══ ABOUT ═════════════════════════════════════════════ -->
+                        <section class="about" id="about">
+                          <div class="rv">
+                            <div class="stag"><div class="stag-dot"></div><span>Notre histoire</span></div>
+                            <h2 class="stitle">Votre partenaire de <em>confiance</em><br />en menuiserie aluminium</h2>
+                          </div>
+
+                          <div class="about-grid">
+                            <div class="about-visual rv">
+                              <div class="av-main">
+                                <!-- Technical profile cross-section -->
+                                <svg class="av-diagram" viewBox="0 0 320 240" fill="none">
+                                  <text x="160" y="16" text-anchor="middle" fill="rgba(139,207,52,.45)" font-size="8" font-family="monospace" letter-spacing="4">PROFIL ALU — SÉRIE KCL</text>
+                                  <rect x="16" y="26" width="288" height="52" rx="2" stroke="rgba(255,255,255,.22)" stroke-width="1.5" fill="rgba(255,255,255,.03)"/>
+                                  <rect x="16" y="31" width="11" height="42" fill="rgba(255,255,255,.12)"/>
+                                  <rect x="293" y="31" width="11" height="42" fill="rgba(255,255,255,.12)"/>
+                                  <rect x="48" y="20" width="20" height="64" rx="1" stroke="rgba(139,207,52,.4)" stroke-width="1" fill="rgba(139,207,52,.04)"/>
+                                  <rect x="88" y="20" width="20" height="64" rx="1" stroke="rgba(139,207,52,.4)" stroke-width="1" fill="rgba(139,207,52,.04)"/>
+                                  <rect x="128" y="20" width="20" height="64" rx="1" stroke="rgba(139,207,52,.4)" stroke-width="1" fill="rgba(139,207,52,.04)"/>
+                                  <rect x="170" y="20" width="20" height="64" rx="1" stroke="rgba(139,207,52,.4)" stroke-width="1" fill="rgba(139,207,52,.04)"/>
+                                  <rect x="212" y="20" width="20" height="64" rx="1" stroke="rgba(139,207,52,.4)" stroke-width="1" fill="rgba(139,207,52,.04)"/>
+                                  <rect x="252" y="20" width="20" height="64" rx="1" stroke="rgba(139,207,52,.4)" stroke-width="1" fill="rgba(139,207,52,.04)"/>
+                                  <!-- Second section -->
+                                  <rect x="16" y="114" width="134" height="96" rx="1" stroke="rgba(255,255,255,.12)" stroke-width="1" fill="rgba(255,255,255,.02)"/>
+                                  <rect x="170" y="114" width="134" height="96" rx="1" stroke="rgba(255,255,255,.12)" stroke-width="1" fill="rgba(255,255,255,.02)"/>
+                                  <line x1="16" y1="162" x2="150" y2="162" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+                                  <line x1="170" y1="162" x2="304" y2="162" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+                                  <line x1="83" y1="114" x2="83" y2="210" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+                                  <line x1="237" y1="114" x2="237" y2="210" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+                                  <line x1="16" y1="224" x2="304" y2="224" stroke="rgba(139,207,52,.18)" stroke-width=".5" stroke-dasharray="2 3"/>
+                                  <text x="160" y="234" text-anchor="middle" fill="rgba(139,207,52,.28)" font-size="7.5" font-family="monospace">← L = 6000 mm →</text>
+                                </svg>
+                              </div>
+                              <div class="av-accent">
+                                <div class="av-num">2021</div>
+                                <div class="av-label">Fondée à Dakar</div>
+                              </div>
+                              <div class="av-badge">
+                                <div class="badge-dot"></div>
+                                <div class="badge-t">NINEA Certifié</div>
+                              </div>
+                            </div>
+
+                            <div class="about-text rv d2">
+                              <p><strong>Impact Africa</strong> est une entreprise sénégalaise basée à Yoff, Dakar. Depuis 2021, nous distribuons des matériaux et accessoires de haute qualité pour la menuiserie aluminium et la vitrerie professionnelle.</p>
+                              <p>Notre catalogue couvre les <strong>profilés aluminium</strong> (dormants, ouvrants, traverses, montants), les <strong>systèmes moustiquaire</strong> KCL, les <strong>joints d'étanchéité</strong> et la <strong>quincaillerie spécialisée</strong> — l'intégralité des composants pour vos projets.</p>
+                              <p>Partenaires de confiance des menuisiers et entreprises du bâtiment, nous garantissons des produits conformes aux standards internationaux, adaptés au climat ouest-africain.</p>
+
+                              <div class="feat-grid">
+                                <div class="feat rv d1"><div class="feat-icon"><iconify-icon icon="mdi:bolt" style="font-size:24px;color:var(--green-dark)"></iconify-icon></div><div class="feat-name">Catalogue Complet</div><div class="feat-desc">35+ références couvrant tous vos besoins en menuiserie</div></div>
+                                <div class="feat rv d2"><div class="feat-icon"><iconify-icon icon="mdi:truck-fast-outline" style="font-size:24px;color:var(--green-dark)"></iconify-icon></div><div class="feat-name">Livraison Rapide</div><div class="feat-desc">Sur Dakar et la région en 24–48h chrono</div></div>
+                                <div class="feat rv d3"><div class="feat-icon"><iconify-icon icon="mdi:medal-outline" style="font-size:24px;color:var(--green-dark)"></iconify-icon></div><div class="feat-name">Qualité Certifiée</div><div class="feat-desc">Standards internationaux, adaptés au marché africain</div></div>
+                                <div class="feat rv d4"><div class="feat-icon"><iconify-icon icon="mdi:handshake-outline" style="font-size:24px;color:var(--green-dark)"></iconify-icon></div><div class="feat-name">Compte Pro</div><div class="feat-desc">Tarifs préférentiels pour artisans et entreprises</div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+
+                        <!-- ═══ PRODUCTS ══════════════════════════════════════════ -->
+                        <section class="products" id="products">
+                          <div class="prod-header rv">
+                            <div>
+                              <div class="stag"><div class="stag-dot"></div><span>Catalogue</span></div>
+                              <h2 class="stitle">Nos <em>gammes</em> produits</h2>
+                            </div>
+                            <p class="prod-note">Solutions complètes pour chaque étape de vos projets de menuiserie aluminium à Dakar.</p>
+                          </div>
+
+                          <div class="prod-grid">
+
+                            <div class="prod-card rv">
+                              <div class="prod-head">
+                                <div class="prod-badge">Profilés</div>
+                                <div class="prod-arrow">→</div>
+                                <svg class="prod-illus" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                                  <rect x="26" y="16" width="88" height="108" rx="1" stroke="rgba(255,255,255,.38)" stroke-width="1.5" fill="none"/>
+                                  <line x1="70" y1="16" x2="70" y2="124" stroke="rgba(255,255,255,.2)" stroke-width="5"/>
+                                  <line x1="26" y1="70" x2="114" y2="70" stroke="rgba(255,255,255,.2)" stroke-width="5"/>
+                                  <rect x="57" y="62" width="26" height="10" rx="2" fill="rgba(139,207,52,.85)"/>
+                                  <circle cx="64" cy="67" r="4" fill="rgba(255,255,255,.6)"/>
+                                  <rect x="29" y="19" width="38" height="48" fill="rgba(255,255,255,.03)"/>
+                                  <rect x="72" y="74" width="39" height="47" fill="rgba(255,255,255,.03)"/>
+                                </svg>
+                              </div>
+                              <div class="prod-body">
+                                <div class="prod-title">Dormants &amp; Ouvrants</div>
+                                <div class="prod-desc">Dormants tubulaires SCVJ, ouvrants F arrondi, parclose — séries KF et KCL complètes.</div>
+                                <a href="/contact" class="prod-link"><iconify-icon icon="mdi:chevron-right" style="font-size:14px"></iconify-icon>En savoir plus</a>
+                              </div>
+                            </div>
+
+                            <div class="prod-card rv d1">
+                              <div class="prod-head">
+                                <div class="prod-badge">Moustiquaire</div>
+                                <div class="prod-arrow">→</div>
+                                <svg class="prod-illus" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                                  <rect x="22" y="22" width="96" height="96" stroke="rgba(255,255,255,.4)" stroke-width="1.5" fill="none"/>
+                                  <g opacity="0.28">
+                                    <line x1="22" y1="38" x2="118" y2="38" stroke="#fff" stroke-width=".8"/><line x1="22" y1="54" x2="118" y2="54" stroke="#fff" stroke-width=".8"/>
+                                    <line x1="22" y1="70" x2="118" y2="70" stroke="#fff" stroke-width=".8"/><line x1="22" y1="86" x2="118" y2="86" stroke="#fff" stroke-width=".8"/>
+                                    <line x1="22" y1="102" x2="118" y2="102" stroke="#fff" stroke-width=".8"/>
+                                    <line x1="38" y1="22" x2="38" y2="118" stroke="#fff" stroke-width=".8"/><line x1="54" y1="22" x2="54" y2="118" stroke="#fff" stroke-width=".8"/>
+                                    <line x1="70" y1="22" x2="70" y2="118" stroke="#fff" stroke-width=".8"/><line x1="86" y1="22" x2="86" y2="118" stroke="#fff" stroke-width=".8"/>
+                                    <line x1="102" y1="22" x2="102" y2="118" stroke="#fff" stroke-width=".8"/>
+                                  </g>
+                                  <rect x="22" y="22" width="7" height="96" fill="rgba(139,207,52,.7)"/>
+                                  <rect x="111" y="22" width="7" height="96" fill="rgba(139,207,52,.7)"/>
+                                  <rect x="22" y="22" width="96" height="7" fill="rgba(139,207,52,.7)"/>
+                                  <rect x="22" y="111" width="96" height="7" fill="rgba(139,207,52,.7)"/>
+                                </svg>
+                              </div>
+                              <div class="prod-body">
+                                <div class="prod-title">Systèmes Moustiquaire</div>
+                                <div class="prod-desc">Ouvrants, dormants SCVJ, montants latéraux &amp; centraux, rive simple — Gamme KCL.</div>
+                                <a href="/contact" class="prod-link"><iconify-icon icon="mdi:chevron-right" style="font-size:14px"></iconify-icon>En savoir plus</a>
+                              </div>
+                            </div>
+
+                            <div class="prod-card rv d2">
+                              <div class="prod-head">
+                                <div class="prod-badge">Fermetures</div>
+                                <div class="prod-arrow">→</div>
+                                <svg class="prod-illus" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                                  <circle cx="70" cy="70" r="44" stroke="rgba(255,255,255,.28)" stroke-width="1.5" fill="none"/>
+                                  <circle cx="70" cy="70" r="24" stroke="rgba(255,255,255,.18)" stroke-width="1" fill="rgba(255,255,255,.03)"/>
+                                  <circle cx="70" cy="70" r="9" fill="rgba(139,207,52,.55)"/>
+                                  <rect x="62" y="62" width="16" height="8" rx="1.5" fill="rgba(255,255,255,.55)"/>
+                                  <line x1="70" y1="26" x2="70" y2="14" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/>
+                                  <line x1="70" y1="114" x2="70" y2="126" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/>
+                                  <line x1="26" y1="70" x2="14" y2="70" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/>
+                                  <line x1="114" y1="70" x2="126" y2="70" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/>
+                                </svg>
+                              </div>
+                              <div class="prod-body">
+                                <div class="prod-title">Quincaillerie &amp; Fermetures</div>
+                                <div class="prod-desc">Crémones, fermetures Brio, compas, paumelles, loqueteaux — accessoires de précision.</div>
+                                <a href="/contact" class="prod-link"><iconify-icon icon="mdi:chevron-right" style="font-size:14px"></iconify-icon>En savoir plus</a>
+                              </div>
+                            </div>
+
+                            <div class="prod-card rv">
+                              <div class="prod-head">
+                                <div class="prod-badge">Étanchéité</div>
+                                <div class="prod-arrow">→</div>
+                                <svg class="prod-illus" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                                  <path d="M70 20C44 32 26 52 30 74C34 96 52 110 70 114C88 110 106 96 110 74C114 52 96 32 70 20Z" stroke="rgba(255,255,255,.28)" stroke-width="1.5" fill="rgba(255,255,255,.03)"/>
+                                  <path d="M70 36C52 46 40 60 44 76C48 92 58 102 70 106C82 102 92 92 96 76C100 60 88 46 70 36Z" stroke="rgba(139,207,52,.5)" stroke-width="1" fill="rgba(139,207,52,.06)"/>
+                                  <circle cx="70" cy="70" r="11" fill="rgba(139,207,52,.5)"/>
+                                  <circle cx="70" cy="70" r="4.5" fill="rgba(255,255,255,.7)"/>
+                                </svg>
+                              </div>
+                              <div class="prod-body">
+                                <div class="prod-title">Joints &amp; Étanchéité</div>
+                                <div class="prod-desc">Joints brosse, vitrage, bourrage, moustiquaire, extérieur — kits complets 2 vantaux.</div>
+                                <a href="/contact" class="prod-link"><iconify-icon icon="mdi:chevron-right" style="font-size:14px"></iconify-icon>En savoir plus</a>
+                              </div>
+                            </div>
+
+                            <div class="prod-card rv d1">
+                              <div class="prod-head">
+                                <div class="prod-badge">Rails &amp; Galets</div>
+                                <div class="prod-arrow">→</div>
+                                <svg class="prod-illus" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                                  <rect x="14" y="60" width="112" height="16" rx="3" stroke="rgba(255,255,255,.38)" stroke-width="1.5" fill="rgba(255,255,255,.04)"/>
+                                  <circle cx="44" cy="92" r="18" stroke="rgba(255,255,255,.32)" stroke-width="2" fill="rgba(255,255,255,.04)"/>
+                                  <circle cx="96" cy="92" r="18" stroke="rgba(255,255,255,.32)" stroke-width="2" fill="rgba(255,255,255,.04)"/>
+                                  <circle cx="44" cy="92" r="7" fill="rgba(139,207,52,.55)"/>
+                                  <circle cx="96" cy="92" r="7" fill="rgba(139,207,52,.55)"/>
+                                  <circle cx="44" cy="92" r="3" fill="rgba(255,255,255,.8)"/>
+                                  <circle cx="96" cy="92" r="3" fill="rgba(255,255,255,.8)"/>
+                                </svg>
+                              </div>
+                              <div class="prod-body">
+                                <div class="prod-title">Rails &amp; Galets</div>
+                                <div class="prod-desc">Rails aluminium, galets simples et doubles réglables pour portes et fenêtres coulissantes.</div>
+                                <a href="/contact" class="prod-link"><iconify-icon icon="mdi:chevron-right" style="font-size:14px"></iconify-icon>En savoir plus</a>
+                              </div>
+                            </div>
+
+                            <div class="prod-card rv d2">
+                              <div class="prod-head">
+                                <div class="prod-badge">Assemblage</div>
+                                <div class="prod-arrow">→</div>
+                                <svg class="prod-illus" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                                  <rect x="62" y="14" width="16" height="112" rx="2" stroke="rgba(255,255,255,.32)" stroke-width="1.5" fill="rgba(255,255,255,.04)"/>
+                                  <rect x="14" y="62" width="112" height="16" rx="2" stroke="rgba(255,255,255,.32)" stroke-width="1.5" fill="rgba(255,255,255,.04)"/>
+                                  <rect x="64" y="64" width="12" height="12" fill="rgba(139,207,52,.85)"/>
+                                  <circle cx="70" cy="32" r="5" fill="rgba(255,255,255,.28)"/>
+                                  <circle cx="70" cy="108" r="5" fill="rgba(255,255,255,.28)"/>
+                                  <circle cx="32" cy="70" r="5" fill="rgba(255,255,255,.28)"/>
+                                  <circle cx="108" cy="70" r="5" fill="rgba(255,255,255,.28)"/>
+                                </svg>
+                              </div>
+                              <div class="prod-body">
+                                <div class="prod-title">Équerres &amp; Fixations</div>
+                                <div class="prod-desc">Équerres dormant/ouvrant, équerres à pion, clapets anti-retour, busettes et bouchons.</div>
+                                <a href="/contact" class="prod-link"><iconify-icon icon="mdi:chevron-right" style="font-size:14px"></iconify-icon>En savoir plus</a>
+                              </div>
+                            </div>
+
+                          </div>
+                        </section>
+
+                        <!-- ═══ STATS ═════════════════════════════════════════════ -->
+                        <div class="trust">
+                          <div class="trust-inner">
+                            <div class="trust-left rv">
+                              <h3>Des <em>chiffres</em><br />qui parlent</h3>
+                              <p>Notre engagement envers la qualité et la satisfaction de nos partenaires professionnels au Sénégal.</p>
+                            </div>
+                            <div class="trust-div"></div>
+                            <div class="trust-stats">
+                              <div class="tstat rv d1"><div class="tstat-n" data-n="35" data-s="+">0</div><div class="tstat-l">Références au catalogue</div></div>
+                              <div class="tstat rv d2"><div class="tstat-n" data-n="200" data-s="+">0</div><div class="tstat-l">Clients professionnels</div></div>
+                              <div class="tstat rv d3"><div class="tstat-n" data-n="4" data-s="+">0</div><div class="tstat-l">Années d'expertise</div></div>
+                              <div class="tstat rv d4"><div class="tstat-n" data-n="48" data-s="h">0</div><div class="tstat-l">Livraison max Dakar</div></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- ═══ SERVICES ══════════════════════════════════════════ -->
+                        <section class="services" id="services">
+                          <div class="rv">
+                            <div class="stag"><div class="stag-dot"></div><span>Services</span></div>
+                            <h2 class="stitle">Un service <em>sur mesure</em><br />pour les professionnels</h2>
+                          </div>
+                          <div class="svc-grid">
+                            <div class="svc-left rv">
+                              <h3>L'expertise<br />au cœur de<br /><em>chaque projet</em></h3>
+                              <p>Impact Africa accompagne menuisiers, poseurs et entreprises de construction avec des solutions complètes et un conseil technique de proximité.</p>
+                              <a href="/#contact" class="svc-cta">Prendre contact →</a>
+                            </div>
+                            <div class="svc-list">
+                              <div class="svc-item rv"><div class="svc-n">01</div><div class="svc-ico"><iconify-icon icon="mdi:package-variant-closed" style="font-size:20px;color:var(--green-dark)"></iconify-icon></div><div class="svc-content"><div class="svc-name">Vente de matériaux &amp; accessoires</div><div class="svc-desc">Profilés, quincaillerie, joints — tout le nécessaire pour vos chantiers en un seul endroit.</div></div></div>
+                              <div class="svc-item rv d1"><div class="svc-n">02</div><div class="svc-ico"><iconify-icon icon="mdi:file-document-edit-outline" style="font-size:20px;color:var(--green-dark)"></iconify-icon></div><div class="svc-content"><div class="svc-name">Devis personnalisé rapide</div><div class="svc-desc">Établissement de devis sur mesure selon vos spécifications et volumes de commande.</div></div></div>
+                              <div class="svc-item rv d2"><div class="svc-n">03</div><div class="svc-ico"><iconify-icon icon="mdi:lightbulb-on-outline" style="font-size:20px;color:var(--green-dark)"></iconify-icon></div><div class="svc-content"><div class="svc-name">Conseil technique expert</div><div class="svc-desc">Notre équipe vous guide dans le choix des produits adaptés à chaque type de projet.</div></div></div>
+                              <div class="svc-item rv d3"><div class="svc-n">04</div><div class="svc-ico"><iconify-icon icon="mdi:truck-delivery-outline" style="font-size:20px;color:var(--green-dark)"></iconify-icon></div><div class="svc-content"><div class="svc-name">Livraison sur Dakar</div><div class="svc-desc">Service de livraison rapide et fiable sur toute la région dakaroise pour vos urgences chantier.</div></div></div>
+                              <div class="svc-item rv d4"><div class="svc-n">05</div><div class="svc-ico"><iconify-icon icon="mdi:account-star-outline" style="font-size:20px;color:var(--green-dark)"></iconify-icon></div><div class="svc-content"><div class="svc-name">Compte professionnel dédié</div><div class="svc-desc">Tarifs préférentiels, conditions adaptées et suivi de commandes pour les pros du bâtiment.</div></div></div>
+                            </div>
+                          </div>
+                        </section>
+
+                        <!-- ═══ QUOTE ══════════════════════════════════════════════ -->
+                        <div class="quote">
+                          <div class="q-mark">"</div>
+                          <p class="q-text">La qualité n'est jamais un accident. C'est toujours le résultat d'un effort intelligent, d'une attention sincère au détail et d'une exécution habile.</p>
+                          <div class="q-src">— La philosophie d'Impact Africa</div>
+                        </div>
+
+                        <!-- ═══ CONTACT ════════════════════════════════════════════ -->
+                        <section class="contact" id="contact">
+                          <div class="rv">
+                            <div class="stag"><div class="stag-dot"></div><span>Contact</span></div>
+                            <h2 class="stitle">Parlons de votre <em>prochain projet</em></h2>
+                          </div>
+                          <div class="contact-grid">
+                            <div class="ci rv">
+                              <h3>Travaillons<br /><em>ensemble</em></h3>
+                              <p>Que vous ayez besoin d'un devis, d'informations produit ou d'un conseil technique, notre équipe est à votre écoute.</p>
+                              <div class="ci-details">
+                                <div class="ci-item"><div class="ci-ico"><iconify-icon icon="mdi:map-marker-outline" style="font-size:18px;color:var(--lime)"></iconify-icon></div><div><div class="ci-lbl">Adresse</div><div class="ci-val">Yoff Ernam – Rte de l'aéroport N° 93<br />BP 8774 – CP 12000, Dakar – Yoff</div></div></div>
+                                <div class="ci-item"><div class="ci-ico"><iconify-icon icon="mdi:phone-outline" style="font-size:18px;color:var(--lime)"></iconify-icon></div><div><div class="ci-lbl">Téléphone</div><div class="ci-val">+221 78 237 88 88 · +221 77 631 61 00</div></div></div>
+                                <div class="ci-item"><div class="ci-ico"><iconify-icon icon="mdi:email-outline" style="font-size:18px;color:var(--lime)"></iconify-icon></div><div><div class="ci-lbl">Email</div><div class="ci-val"><a href="mailto:contact@impact-africa.sn">contact@impact-africa.sn</a></div></div></div>
+                                <div class="ci-item"><div class="ci-ico"><iconify-icon icon="mdi:shield-check-outline" style="font-size:18px;color:var(--lime)"></iconify-icon></div><div><div class="ci-lbl">Infos légales</div><div class="ci-val">NINEA : 008696083 2V5 · SN-DKR-2021-B-22923</div></div></div>
+                              </div>
+                            </div>
+                            <div class="form-wrap rv d2">
+                              <div class="form-h">Envoyez-nous un message</div>
+                              <div class="form-sh">Réponse garantie sous 24h ouvrées</div>
+                              <form action="/website/form/" method="post" class="form s_website_form o_mark_required impact-home-contact-form" data-model_name="crm.lead" data-pre-fill="true" data-mark="*">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <input type="hidden" name="name" id="homeContactLeadName" value="Site web - Contact accueil"/>
+                                <div class="f-row">
+                                  <div class="fg form-field s_website_form_field s_website_form_model_required" data-type="char">
+                                    <label for="home_contact_name">Nom complet</label>
+                                    <input id="home_contact_name" class="s_website_form_input" type="text" name="contact_name" placeholder="Votre nom" required="required"/>
+                                  </div>
+                                  <div class="fg form-field s_website_form_field" data-type="char">
+                                    <label for="home_partner_name">Entreprise</label>
+                                    <input id="home_partner_name" class="s_website_form_input" type="text" name="partner_name" placeholder="Votre société"/>
+                                  </div>
+                                </div>
+                                <div class="f-row">
+                                  <div class="fg form-field s_website_form_field" data-type="tel">
+                                    <label for="home_phone">Téléphone</label>
+                                    <input id="home_phone" class="s_website_form_input" type="tel" name="phone" placeholder="+221 XX XXX XX XX"/>
+                                  </div>
+                                  <div class="fg form-field s_website_form_field s_website_form_model_required" data-type="email">
+                                    <label for="home_email_from">Email</label>
+                                    <input id="home_email_from" class="s_website_form_input" type="email" name="email_from" placeholder="vous@exemple.sn" required="required"/>
+                                  </div>
+                                </div>
+                                <div class="fg form-field s_website_form_field" data-type="selection">
+                                  <label for="homeContactRequestType">Type de demande</label>
+                                  <select id="homeContactRequestType" class="s_website_form_input" name="request_type">
+                                    <option value="">Sélectionner...</option>
+                                    <option value="Demande de devis">Demande de devis</option>
+                                    <option value="Information produit">Information produit</option>
+                                    <option value="Conseil technique">Conseil technique</option>
+                                    <option value="Partenariat">Partenariat</option>
+                                    <option value="Autre">Autre</option>
+                                  </select>
+                                </div>
+                                <div class="fg form-field s_website_form_field s_website_form_model_required" data-type="text">
+                                  <label for="home_description">Message</label>
+                                  <textarea id="home_description" class="s_website_form_input" name="description" placeholder="Décrivez votre projet ou demande..." required="required"></textarea>
+                                </div>
+                                <div class="home-contact-actions">
+                                  <div class="home-contact-submit">
+                                    <span id="s_website_form_result" class="impact-home-contact-result"></span>
+                                    <a href="#" role="button" class="f-btn s_website_form_send"><iconify-icon icon="mdi:send-outline" style="font-size:16px"></iconify-icon>Envoyer la demande</a>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </section>
+
+                        <!-- ═══ MAP ════════════════════════════════════════════════ -->
+                        <div class="map-band">
+                          <div class="map-grid"></div>
+                          <div class="map-glow"></div>
+                          <div class="map-rings"><div class="map-ring"></div><div class="map-ring"></div><div class="map-ring"></div><div class="map-pin"></div></div>
+                          <div class="map-content">
+                            <div class="map-addr">Yoff Ernam, Dakar</div>
+                            <div class="map-sub">Route de l'Aéroport N° 93 — Sénégal</div>
+                            <a href="https://maps.google.com/?q=Yoff+Ernam+Dakar" target="_blank" class="map-btn"><iconify-icon icon="mdi:map-marker" style="font-size:14px"></iconify-icon>Voir sur Google Maps</a>
+                          </div>
+                        </div>
+
+                        <!-- ═══ FOOTER ═════════════════════════════════════════════ -->
+
+                        <div class="notif" id="notif"><iconify-icon icon="mdi:check-circle-outline" style="font-size:16px;vertical-align:middle;margin-right:6px"></iconify-icon>Message envoyé avec succès</div>
+                    <t t-call-assets="theme_impact_africa.assets_index" t-css="false"/>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

@@ -480,9 +480,34 @@ body .js_usermenu #o_logout:focus .fa {
 @media (max-width: 860px) {
     body .nav-links,
     body .nav-btn,
-    body .hdr-btn,
-    body .hdr-user {
+    body .hdr-btn {
         display: none !important;
+    }
+
+    body .nav-right {
+        gap: 10px;
+    }
+
+    body .hdr-user {
+        display: flex !important;
+    }
+
+    body .hdr-user-link {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 4px;
+    }
+
+    body .hdr-user-avatar {
+        width: 34px;
+        height: 34px;
+    }
+
+    body .hdr-user-menu.dropdown-menu,
+    body .js_usermenu.dropdown-menu {
+        min-width: 250px;
+        margin-top: 10px;
+        margin-right: -8px;
     }
 
     body .hbg {
@@ -493,6 +518,20 @@ body .js_usermenu #o_logout:focus .fa {
 @media (max-width: 480px) {
     body header #nav {
         padding: 14px 18px;
+    }
+
+    body .nav-right {
+        gap: 8px;
+    }
+
+    body .hdr-user-link {
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    body .hdr-user-avatar {
+        width: 30px;
+        height: 30px;
     }
 
     body .drawer {

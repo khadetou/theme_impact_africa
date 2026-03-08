@@ -1,0 +1,893 @@
+:root {
+    --impact-lime: #8bcf34;
+    --impact-mint: #66c97a;
+    --impact-teal: #3ec99a;
+    --impact-ink: #2f444a;
+    --impact-ink-deep: #1a2e34;
+    --impact-dark: #0c1c22;
+    --impact-dark-mid: #132530;
+}
+
+.s_impact_banner_v1.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.03fr) minmax(0, 0.97fr);
+    min-height: 100svh;
+    padding: 84px 0 0 !important;
+    position: relative;
+    overflow: hidden;
+    background: var(--impact-dark);
+}
+
+.s_impact_banner_v1.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 18% 22%, rgba(62, 201, 154, 0.1), transparent 26%),
+        radial-gradient(circle at 72% 14%, rgba(139, 207, 52, 0.08), transparent 22%);
+    pointer-events: none;
+}
+
+.s_impact_banner_v1 .hero-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 136px 80px 120px;
+    z-index: 2;
+}
+
+.s_impact_banner_v1 .hero-bg-num {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 260px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.025);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.s_impact_banner_v1 .hero-year-tag {
+    position: absolute;
+    top: 56px;
+    left: 80px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.s_impact_banner_v1 .hero-year-line {
+    width: 28px;
+    height: 1px;
+    background: rgba(139, 207, 52, 0.45);
+}
+
+.s_impact_banner_v1 .hero-year-tag span {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+    font-weight: 500;
+}
+
+.s_impact_banner_v1 .hero-copy-panel {
+    position: relative;
+    max-width: 620px;
+    padding: 44px 44px 36px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(10px);
+    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.18);
+}
+
+.s_impact_banner_v1 .hero-copy-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 108px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--impact-lime), transparent);
+}
+
+.s_impact_banner_v1 .hero-copy-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+}
+
+.s_impact_banner_v1 .hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(139, 207, 52, 0.92);
+    font-weight: 700;
+}
+
+.s_impact_banner_v1 .hero-kicker-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--impact-lime), var(--impact-teal));
+    box-shadow: 0 0 16px rgba(139, 207, 52, 0.35);
+}
+
+.s_impact_banner_v1 .hero-inline-note {
+    max-width: 220px;
+    font-size: 11px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.34);
+    text-align: right;
+}
+
+.s_impact_banner_v1 .hero-title {
+    margin: 0 0 22px;
+    color: #fff;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 68px;
+    font-weight: 300;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+}
+
+.s_impact_banner_v1 .hero-title strong {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--impact-lime);
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+}
+
+.s_impact_banner_v1 .hero-title em {
+    color: var(--impact-lime);
+    font-style: italic;
+}
+
+.s_impact_banner_v1 .hero-desc {
+    max-width: 500px;
+    margin-bottom: 28px;
+    font-size: 15px;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.58);
+}
+
+.s_impact_banner_v1 .hero-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.s_impact_banner_v1 .hero-proof-card {
+    min-height: 132px;
+    padding: 18px 18px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.s_impact_banner_v1 .hero-proof-label {
+    display: block;
+    margin-bottom: 10px;
+    color: rgba(139, 207, 52, 0.88);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+}
+
+.s_impact_banner_v1 .hero-proof-card strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.s_impact_banner_v1 .hero-proof-card p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 12.5px;
+    line-height: 1.7;
+}
+
+.s_impact_banner_v1 .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: auto;
+}
+
+.s_impact_banner_v1 .cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 3px;
+    background: var(--impact-lime);
+    color: var(--impact-ink-deep);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background-color 0.22s ease;
+}
+
+.s_impact_banner_v1 .cta-primary:hover {
+    background: var(--impact-mint);
+    color: var(--impact-ink-deep);
+}
+
+.s_impact_banner_v1 .cta-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 20px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    transition: color 0.22s ease;
+}
+
+.s_impact_banner_v1 .cta-ghost span {
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.35);
+    transition: width 0.22s ease;
+}
+
+.s_impact_banner_v1 .cta-ghost:hover {
+    color: #fff;
+}
+
+.s_impact_banner_v1 .cta-ghost:hover span {
+    width: 32px;
+}
+
+.s_impact_banner_v1 .hero-loc {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 11px;
+}
+
+.s_impact_banner_v1 .hero-loc-l {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.s_impact_banner_v1 .hero-loc-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--impact-lime);
+    animation: impactPulse 2s infinite;
+}
+
+.s_impact_banner_v1 .hero-loc-text {
+    letter-spacing: 0.1em;
+}
+
+.s_impact_banner_v1 .hero-loc-r {
+    font-family: monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+}
+
+.s_impact_banner_v1 .hero-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0f222a 0%, #122733 48%, #163541 100%);
+}
+
+.s_impact_banner_v1 .hr-photo {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(135deg, rgba(12, 28, 34, 0.72), rgba(19, 37, 48, 0.84));
+}
+
+.s_impact_banner_v1 .hr-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+    background-size: 44px 44px;
+    opacity: 0.7;
+}
+
+.s_impact_banner_v1 .hr-stripe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    width: 14px;
+    background: var(--impact-lime);
+    opacity: 0.25;
+}
+
+.s_impact_banner_v1 .hr-tech-card {
+    position: absolute;
+    top: 44px;
+    left: 34px;
+    z-index: 3;
+    max-width: 230px;
+    padding: 18px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: rgba(255, 255, 255, 0.045);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.s_impact_banner_v1 .hr-tech-kicker {
+    display: block;
+    margin-bottom: 8px;
+    color: rgba(139, 207, 52, 0.82);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.s_impact_banner_v1 .hr-tech-card strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.s_impact_banner_v1 .hr-tech-card p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.s_impact_banner_v1 .hr-elevation {
+    position: relative;
+    z-index: 2;
+    width: 82%;
+    max-width: 440px;
+    height: auto;
+    filter: drop-shadow(0 18px 44px rgba(0, 0, 0, 0.26));
+}
+
+.s_impact_banner_v1 .hr-corner-tag {
+    position: absolute;
+    right: 28px;
+    bottom: 28px;
+    z-index: 3;
+    text-align: right;
+}
+
+.s_impact_banner_v1 .hr-corner-num {
+    color: rgba(255, 255, 255, 0.65);
+    font-family: monospace;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+}
+
+.s_impact_banner_v1 .hr-corner-label {
+    margin-top: 2px;
+    color: rgba(139, 207, 52, 0.55);
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.s_impact_banner_v1 .hr-info {
+    position: absolute;
+    right: 28px;
+    bottom: 66px;
+    left: 28px;
+    z-index: 3;
+}
+
+.s_impact_banner_v1 .hr-info-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.s_impact_banner_v1 .hr-stat {
+    padding: 18px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.045);
+    backdrop-filter: blur(8px);
+    text-align: left;
+}
+
+.s_impact_banner_v1 .hr-stat-n {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.s_impact_banner_v1 .hr-stat-n em {
+    color: var(--impact-lime);
+    font-size: 0.6em;
+    font-style: normal;
+}
+
+.s_impact_banner_v1 .hr-stat-l {
+    margin-top: 4px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.s_impact_banner_v1 .hero-scroll {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transform: translateX(-50%);
+}
+
+.s_impact_banner_v1 .scroll-line {
+    width: 1px;
+    height: 32px;
+    background: linear-gradient(to bottom, transparent, rgba(139, 207, 52, 0.45));
+    animation: impactScrollLine 1.8s infinite;
+}
+
+.s_impact_banner_v1 .scroll-text {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.s_impact_banner_carousel {
+    position: relative;
+    overflow: hidden;
+    padding: 0 !important;
+    background: var(--impact-dark);
+}
+
+.impact-banner-carousel {
+    position: relative;
+    min-height: clamp(720px, 100svh, 920px);
+    color: #fff;
+    background: #08151a;
+}
+
+.impact-banner-carousel__viewport {
+    position: relative;
+    min-height: inherit;
+}
+
+.impact-banner-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.02);
+    transition: opacity 0.7s ease, transform 0.9s ease;
+}
+
+.impact-banner-slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.impact-banner-slide__image,
+.impact-banner-slide__shade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.impact-banner-slide__image {
+    object-fit: cover;
+}
+
+.impact-banner-slide__shade {
+    background:
+        linear-gradient(90deg, rgba(8, 16, 22, 0.72) 0%, rgba(8, 16, 22, 0.38) 38%, rgba(8, 16, 22, 0.16) 100%),
+        linear-gradient(180deg, rgba(8, 16, 22, 0.1) 0%, rgba(8, 16, 22, 0.18) 100%);
+}
+
+.impact-banner-slide__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    min-height: inherit;
+    padding: 50px 44px 22px;
+}
+
+.impact-banner-slide__content {
+    width: 100%;
+    max-width: 760px;
+    margin: auto 0 116px;
+    padding-top: 74px;
+}
+
+.impact-banner-slide__eyebrow {
+    display: inline-flex;
+    margin-bottom: 18px;
+    color: rgba(139, 207, 52, 0.92);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+}
+
+.impact-banner-slide__content h2 {
+    max-width: 16ch;
+    margin: 0 0 20px;
+    color: #fff;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(62px, 6.6vw, 104px);
+    font-weight: 300;
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+}
+
+.impact-banner-slide__content h2 em {
+    display: inline-block;
+    color: var(--impact-lime);
+    font-style: italic;
+}
+
+.impact-banner-slide__content p {
+    max-width: 620px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 17px;
+    line-height: 1.82;
+}
+
+.impact-banner-slide__rail {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+    max-width: 1200px;
+    margin-top: auto;
+    padding-top: 24px;
+    padding-bottom: 56px;
+}
+
+.impact-banner-slide__rail a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-top-color: rgba(255, 255, 255, 0.34);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+    box-shadow: 0 18px 48px rgba(6, 14, 18, 0.12);
+    color: rgba(255, 255, 255, 0.92);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.45;
+    backdrop-filter: blur(10px);
+    transition: transform 0.22s ease, border-color 0.22s ease, background-color 0.22s ease;
+}
+
+.impact-banner-slide__rail a::after {
+    content: "↗";
+    font-size: 28px;
+    line-height: 1;
+    opacity: 0.82;
+}
+
+.impact-banner-slide__rail a:hover {
+    color: #fff;
+    transform: translateY(-4px);
+    border-color: rgba(139, 207, 52, 0.34);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06));
+}
+
+.impact-banner-carousel__controls {
+    position: absolute;
+    right: 30px;
+    bottom: 48px;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    background: rgba(9, 18, 24, 0.42);
+    backdrop-filter: blur(10px);
+}
+
+.impact-banner-carousel__arrow {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 50%;
+    background: transparent;
+    color: #fff;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.impact-banner-carousel__arrow:hover {
+    transform: translateY(-2px);
+    border-color: rgba(139, 207, 52, 0.6);
+    background: rgba(139, 207, 52, 0.1);
+}
+
+.impact-banner-carousel__arrow iconify-icon {
+    font-size: 20px;
+}
+
+.impact-banner-carousel__dots {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.impact-banner-carousel__dot {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.28);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.impact-banner-carousel__dot.is-active {
+    background: var(--impact-lime);
+    transform: scale(1.2);
+}
+
+body.editor_enable .impact-banner-carousel__controls,
+body.editor_enable .impact-banner-slide__rail {
+    opacity: 1;
+}
+
+@keyframes impactPulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes impactScrollLine {
+    0% {
+        opacity: 0.2;
+        transform: scaleY(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+    100% {
+        opacity: 0.2;
+        transform: scaleY(0.5);
+    }
+}
+
+@media (max-width: 1100px) {
+    .s_impact_banner_v1 .hero-left {
+        padding: 124px 36px 110px;
+    }
+
+    .s_impact_banner_v1 .hero-year-tag {
+        left: 36px;
+    }
+
+    .impact-banner-slide__content h2 {
+        max-width: 16ch;
+        font-size: clamp(52px, 6vw, 82px);
+    }
+}
+
+@media (max-width: 860px) {
+    .s_impact_banner_v1.hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        padding-top: 72px !important;
+    }
+
+    .s_impact_banner_v1 .hero-left {
+        min-height: 70vh;
+        padding: 112px 24px 100px;
+    }
+
+    .s_impact_banner_v1 .hero-copy-panel {
+        max-width: none;
+        padding: 28px 22px 24px;
+    }
+
+    .s_impact_banner_v1 .hero-inline-note {
+        max-width: none;
+        text-align: left;
+    }
+
+    .s_impact_banner_v1 .hero-proof-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .s_impact_banner_v1 .hero-right {
+        min-height: 280px;
+        height: 55vw;
+    }
+
+    .s_impact_banner_v1 .hero-title {
+        font-size: 48px;
+    }
+
+    .s_impact_banner_v1 .hero-bg-num {
+        font-size: 180px;
+    }
+
+    .s_impact_banner_v1 .hero-year-tag {
+        top: 36px;
+        left: 24px;
+    }
+
+    .s_impact_banner_v1 .hero-loc {
+        padding: 14px 24px;
+    }
+
+    .s_impact_banner_v1 .hr-tech-card,
+    .s_impact_banner_v1 .hr-corner-tag {
+        display: none;
+    }
+
+    .s_impact_banner_v1 .hr-info {
+        right: 20px;
+        bottom: 18px;
+        left: 20px;
+    }
+
+    .s_impact_banner_v1 .hr-info-row {
+        gap: 10px;
+    }
+
+    .s_impact_banner_v1 .hr-stat {
+        padding: 12px 12px 10px;
+    }
+
+    .s_impact_banner_v1 .hr-stat-n {
+        font-size: 22px;
+    }
+
+    .s_impact_banner_v1 .hr-stat-l {
+        font-size: 9px;
+    }
+
+    .impact-banner-carousel {
+        min-height: 860px;
+    }
+
+    .impact-banner-slide__inner {
+        padding: 30px 24px 24px;
+    }
+
+    .impact-banner-slide__content {
+        margin: auto 0 72px;
+        padding-top: 42px;
+    }
+
+    .impact-banner-slide__content h2 {
+        max-width: 16ch;
+        font-size: clamp(46px, 10vw, 70px);
+    }
+
+    .impact-banner-slide__content p {
+        font-size: 15px;
+    }
+
+    .impact-banner-slide__rail {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding-top: 10px;
+        padding-bottom: 74px;
+    }
+
+    .impact-banner-slide__rail a {
+        padding: 14px 16px;
+    }
+
+    .impact-banner-carousel__controls {
+        right: 16px;
+        bottom: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .s_impact_banner_v1 .hero-left {
+        padding: 96px 18px 96px;
+    }
+
+    .s_impact_banner_v1 .hero-year-tag {
+        top: 34px;
+        left: 18px;
+    }
+
+    .s_impact_banner_v1 .hero-title {
+        font-size: 36px;
+    }
+
+    .s_impact_banner_v1 .hero-desc {
+        font-size: 14px;
+    }
+
+    .s_impact_banner_v1 .hero-copy-panel {
+        padding: 24px 18px 20px;
+    }
+
+    .s_impact_banner_v1 .hero-kicker,
+    .s_impact_banner_v1 .hero-year-tag span {
+        letter-spacing: 0.2em;
+    }
+
+    .s_impact_banner_v1 .hero-loc {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .impact-banner-carousel {
+        min-height: 760px;
+    }
+
+    .impact-banner-slide__content h2 {
+        font-size: 42px;
+    }
+
+    .impact-banner-carousel__controls {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        justify-content: space-between;
+    }
+}

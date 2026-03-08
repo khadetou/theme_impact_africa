@@ -36,10 +36,10 @@
                           <h2 class="stitle">Des partenaires <em>de confiance</em><br />à l'échelle internationale</h2></div>
 
                           <div class="p-filter">
-                            <button class="pf-btn active" onclick="filterPartners('all',this)">Tous</button>
-                            <button class="pf-btn" onclick="filterPartners('fournisseur',this)">Fournisseurs</button>
-                            <button class="pf-btn" onclick="filterPartners('distributeur',this)">Distributeurs</button>
-                            <button class="pf-btn" onclick="filterPartners('technique',this)">Technique</button>
+                            <button class="pf-btn active" type="button" data-partner-filter="all">Tous</button>
+                            <button class="pf-btn" type="button" data-partner-filter="fournisseur">Fournisseurs</button>
+                            <button class="pf-btn" type="button" data-partner-filter="distributeur">Distributeurs</button>
+                            <button class="pf-btn" type="button" data-partner-filter="technique">Technique</button>
                           </div>
 
                           <div class="p-grid" id="partnersGrid">

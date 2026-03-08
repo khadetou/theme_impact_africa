@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="impact_africa_snippet_group" inherit_id="website.snippets" name="Impact Africa Snippets">
+        <xpath expr="//snippets[@id='snippet_groups']//t[@snippet-group='custom']" position="after">
+            <t snippet-group="impact_africa"
+               t-snippet="website.s_snippet_group"
+               string="Impact Africa"
+               t-thumbnail="/theme_impact_africa/static/src/img/snippets/impact_group.svg"/>
+        </xpath>
+        <xpath expr="//snippets[@id='snippet_structure']//t[@t-snippet='website.s_banner']" position="after">
+            <t t-snippet="theme_impact_africa.s_banner_v1"
+               string="Banner V1"
+               group="impact_africa"
+               t-thumbnail="/theme_impact_africa/static/src/img/snippets/banner_v1_thumb.svg">
+                <keywords>impact africa, banner, hero, aluminium, vitrerie, intro, premium, accueil</keywords>
+            </t>
+            <t t-snippet="theme_impact_africa.s_banner_carousel"
+               string="Banner Carousel"
+               group="impact_africa"
+               t-thumbnail="/theme_impact_africa/static/src/img/snippets/banner_carousel_thumb.svg">
+                <keywords>impact africa, carousel, slider, hero, architecture, image, showcase, landing</keywords>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="s_banner_v1" name="Impact Africa Banner V1">
+        <section class="hero s_impact_banner_v1" data-snippet="theme_impact_africa.s_banner_v1" data-name="Banner V1">
+            <div class="hero-left">
+                <div class="hero-bg-num">IA</div>
+                <div class="hero-year-tag">
+                    <div class="hero-year-line"></div>
+                    <span>Dakar · Sénégal · Est. 2021</span>
+                </div>
+                <div class="hero-copy-panel">
+                    <div class="hero-copy-top">
+                        <div class="hero-kicker">
+                            <span class="hero-kicker-dot"></span>
+                            Menuiserie &amp; Vitrerie Professionnelle
+                        </div>
+                        <div class="hero-inline-note">Solutions techniques pour artisans, entreprises et projets premium.</div>
+                    </div>
+                    <h1 class="hero-title">
+                        <strong>Menuiserie &amp; Vitrerie</strong>
+                        L'art de<br />
+                        <em>l'aluminium</em>
+                    </h1>
+                    <p class="hero-desc">
+                        Fournisseur spécialisé de profilés aluminium, systèmes moustiquaire, quincaillerie et accessoires d'étanchéité pour les professionnels du bâtiment en Afrique de l'Ouest.
+                    </p>
+                    <div class="hero-proof-grid">
+                        <div class="hero-proof-card">
+                            <span class="hero-proof-label">Stock immédiat</span>
+                            <strong>35+ références</strong>
+                            <p>Profilés, accessoires et systèmes KCL disponibles à Dakar.</p>
+                        </div>
+                        <div class="hero-proof-card">
+                            <span class="hero-proof-label">Service pro</span>
+                            <strong>Réponse rapide</strong>
+                            <p>Conseil, devis et livraison pour vos chantiers en 24 à 48h.</p>
+                        </div>
+                    </div>
+                    <div class="hero-ctas">
+                        <a href="/#products" class="cta-primary">
+                            <iconify-icon icon="mdi:view-grid-outline" style="font-size:16px"></iconify-icon>
+                            Explorer nos produits
+                        </a>
+                        <a href="/#about" class="cta-ghost"><span></span>Notre histoire</a>
+                    </div>
+                </div>
+                <div class="hero-loc">
+                    <div class="hero-loc-l">
+                        <div class="hero-loc-dot"></div>
+                        <span class="hero-loc-text">Yoff Ernam, Rte de l'Aéroport N°93 - Dakar</span>
+                    </div>
+                    <span class="hero-loc-r">NINEA 008696083</span>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hr-photo"></div>
+                <div class="hr-grid"></div>
+                <div class="hr-stripe"></div>
+                <div class="hr-tech-card">
+                    <span class="hr-tech-kicker">Configuration</span>
+                    <strong>Série KCL Premium</strong>
+                    <p>Dormant moustiquaire SCVJ, lecture technique et finitions haut de gamme.</p>
+                </div>
+                <svg class="hr-elevation" viewBox="0 0 460 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="40" y="40" width="380" height="480" stroke="rgba(255,255,255,.05)" stroke-width="1" fill="none"/>
+                    <rect x="70" y="80" width="320" height="420" stroke="rgba(255,255,255,.22)" stroke-width="9" fill="rgba(255,255,255,.015)" rx="1"/>
+                    <rect x="70" y="80" width="320" height="420" stroke="rgba(255,255,255,.08)" stroke-width="1" fill="none"/>
+                    <rect x="226" y="80" width="8" height="420" fill="rgba(255,255,255,.18)"/>
+                    <rect x="70" y="240" width="320" height="8" fill="rgba(255,255,255,.15)"/>
+                    <rect x="75" y="85" width="145" height="149" fill="rgba(62,201,154,.04)"/>
+                    <rect x="239" y="85" width="145" height="149" fill="rgba(139,207,52,.03)"/>
+                    <rect x="75" y="254" width="145" height="240" fill="rgba(139,207,52,.03)"/>
+                    <rect x="239" y="254" width="145" height="240" fill="rgba(62,201,154,.04)"/>
+                    <path d="M80 90 L160 90 L130 150 L80 150Z" fill="rgba(255,255,255,.025)"/>
+                    <path d="M244 90 L290 90 L270 130 L244 130Z" fill="rgba(255,255,255,.02)"/>
+                    <rect x="207" y="220" width="46" height="12" rx="2" fill="rgba(139,207,52,.75)"/>
+                    <circle cx="218" cy="226" r="5" fill="rgba(255,255,255,.55)"/>
+                    <rect x="70" y="80" width="14" height="14" fill="rgba(139,207,52,.35)"/>
+                    <rect x="376" y="80" width="14" height="14" fill="rgba(139,207,52,.35)"/>
+                    <rect x="70" y="486" width="14" height="14" fill="rgba(139,207,52,.35)"/>
+                    <rect x="376" y="486" width="14" height="14" fill="rgba(139,207,52,.35)"/>
+                    <g opacity="0.055">
+                        <line x1="239" y1="254" x2="239" y2="494" stroke="#fff" stroke-width="1"/>
+                        <line x1="255" y1="254" x2="255" y2="494" stroke="#fff" stroke-width=".6"/>
+                        <line x1="271" y1="254" x2="271" y2="494" stroke="#fff" stroke-width=".6"/>
+                        <line x1="287" y1="254" x2="287" y2="494" stroke="#fff" stroke-width=".6"/>
+                        <line x1="303" y1="254" x2="303" y2="494" stroke="#fff" stroke-width=".6"/>
+                        <line x1="319" y1="254" x2="319" y2="494" stroke="#fff" stroke-width=".6"/>
+                        <line x1="335" y1="254" x2="335" y2="494" stroke="#fff" stroke-width=".6"/>
+                        <line x1="351" y1="254" x2="351" y2="494" stroke="#fff" stroke-width=".6"/>
+                        <line x1="239" y1="270" x2="384" y2="270" stroke="#fff" stroke-width=".6"/>
+                        <line x1="239" y1="286" x2="384" y2="286" stroke="#fff" stroke-width=".6"/>
+                        <line x1="239" y1="302" x2="384" y2="302" stroke="#fff" stroke-width=".6"/>
+                        <line x1="239" y1="318" x2="384" y2="318" stroke="#fff" stroke-width=".6"/>
+                        <line x1="239" y1="334" x2="384" y2="334" stroke="#fff" stroke-width=".6"/>
+                        <line x1="239" y1="350" x2="384" y2="350" stroke="#fff" stroke-width=".6"/>
+                        <line x1="239" y1="366" x2="384" y2="366" stroke="#fff" stroke-width=".6"/>
+                        <line x1="239" y1="382" x2="384" y2="382" stroke="#fff" stroke-width=".6"/>
+                        <line x1="239" y1="398" x2="384" y2="398" stroke="#fff" stroke-width=".6"/>
+                        <line x1="239" y1="414" x2="384" y2="414" stroke="#fff" stroke-width=".6"/>
+                        <line x1="239" y1="430" x2="384" y2="430" stroke="#fff" stroke-width=".6"/>
+                        <line x1="239" y1="446" x2="384" y2="446" stroke="#fff" stroke-width=".6"/>
+                        <line x1="239" y1="462" x2="384" y2="462" stroke="#fff" stroke-width=".6"/>
+                        <line x1="239" y1="478" x2="384" y2="478" stroke="#fff" stroke-width=".6"/>
+                    </g>
+                    <line x1="56" y1="80" x2="56" y2="500" stroke="rgba(139,207,52,.18)" stroke-width=".7" stroke-dasharray="3 4"/>
+                    <line x1="50" y1="80" x2="62" y2="80" stroke="rgba(139,207,52,.28)" stroke-width=".7"/>
+                    <line x1="50" y1="500" x2="62" y2="500" stroke="rgba(139,207,52,.28)" stroke-width=".7"/>
+                    <text x="44" y="294" fill="rgba(139,207,52,.32)" font-size="9" font-family="monospace" transform="rotate(-90,44,294)">H = 2400 mm</text>
+                    <line x1="70" y1="524" x2="390" y2="524" stroke="rgba(139,207,52,.18)" stroke-width=".7" stroke-dasharray="3 4"/>
+                    <line x1="70" y1="518" x2="70" y2="530" stroke="rgba(139,207,52,.28)" stroke-width=".7"/>
+                    <line x1="390" y1="518" x2="390" y2="530" stroke="rgba(139,207,52,.28)" stroke-width=".7"/>
+                    <text x="230" y="542" fill="rgba(139,207,52,.32)" font-size="9" font-family="monospace" text-anchor="middle">L = 1500 mm</text>
+                    <text x="230" y="32" fill="rgba(255,255,255,.1)" font-size="8.5" font-family="monospace" letter-spacing="4" text-anchor="middle">SERIE KCL - DORMANT MOUSTIQUAIRE SCVJ</text>
+                </svg>
+                <div class="hr-corner-tag">
+                    <div class="hr-corner-num">KCL</div>
+                    <div class="hr-corner-label">Série Premium</div>
+                </div>
+                <div class="hr-info" style="animation:fadeUp .6s ease both">
+                    <div class="hr-info-row">
+                        <div class="hr-stat"><div class="hr-stat-n">35<em>+</em></div><div class="hr-stat-l">Références</div></div>
+                        <div class="hr-stat"><div class="hr-stat-n">24<em>h</em></div><div class="hr-stat-l">Livraison</div></div>
+                        <div class="hr-stat"><div class="hr-stat-n">200<em>+</em></div><div class="hr-stat-l">Clients pro</div></div>
+                    </div>
+                </div>
+                <div class="hero-scroll">
+                    <div class="scroll-line"></div>
+                    <div class="scroll-text">Défiler</div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="s_banner_carousel" name="Impact Africa Banner Carousel">
+        <section class="s_impact_banner_carousel" data-snippet="theme_impact_africa.s_banner_carousel" data-name="Banner Carousel">
+            <div class="impact-banner-carousel" data-impact-carousel="true" data-interval="5600">
+                <div class="impact-banner-carousel__viewport">
+                    <article class="impact-banner-slide is-active" data-impact-slide="0" aria-hidden="false">
+                        <img class="impact-banner-slide__image" src="https://images.unsplash.com/photo-1627141234469-24711efb373c?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8bW9kZXJuJTIwaG91c2UlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzcyOTc0MDY1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1600" alt="Maison moderne en architecture contemporaine"/>
+                        <div class="impact-banner-slide__shade"></div>
+                        <div class="impact-banner-slide__inner">
+                            <div class="impact-banner-slide__content">
+                                <span class="impact-banner-slide__eyebrow">Menuiserie Aluminium</span>
+                                <h2>Des lignes nettes,<br /><em>une finition premium</em></h2>
+                                <p>Pour les villas, immeubles et projets d'exception, Impact Africa fournit des solutions aluminium et vitrage conçues pour durer et valoriser l'architecture.</p>
+                            </div>
+                            <div class="impact-banner-slide__rail">
+                                <a href="/services">Voir nos gammes aluminium</a>
+                                <a href="/partenaires">Références de chantiers livrés</a>
+                                <a href="/contact">Obtenir un devis pour votre projet</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="impact-banner-slide" data-impact-slide="1" aria-hidden="true">
+                        <img class="impact-banner-slide__image" src="https://images.unsplash.com/photo-1707823945934-bd0e46f4a612?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8Z2xhc3MlMjBvZmZpY2UlMjBidWlsZGluZyUyMGZhY2FkZXxlbnwwfHx8fDE3NzI5NzQwNjd8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1600" alt="Façade de bureaux en verre et aluminium"/>
+                        <div class="impact-banner-slide__shade"></div>
+                        <div class="impact-banner-slide__inner">
+                            <div class="impact-banner-slide__content">
+                                <span class="impact-banner-slide__eyebrow">Façades &amp; Corporate</span>
+                                <h2>Des façades qui affirment<br /><em>votre signature</em></h2>
+                                <p>Des systèmes pensés pour les bâtiments professionnels, avec des profils robustes, une lecture architecturale claire et un rendu haut de gamme.</p>
+                            </div>
+                            <div class="impact-banner-slide__rail">
+                                <a href="/services">Solutions façades et vitrages</a>
+                                <a href="/partenaires">Voir nos partenaires BTP</a>
+                                <a href="/contact">Parler à notre équipe technique</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="impact-banner-slide" data-impact-slide="2" aria-hidden="true">
+                        <img class="impact-banner-slide__image" src="https://images.unsplash.com/photo-1760072513403-d70003481414?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8bW9kZXJuJTIwYXJjaGl0ZWN0dXJhbCUyMGludGVyaW9yJTIwc2hvd3Jvb218ZW58MHx8fHwxNzcyOTc0MDY4fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1600" alt="Showroom architectural moderne"/>
+                        <div class="impact-banner-slide__shade"></div>
+                        <div class="impact-banner-slide__inner">
+                            <div class="impact-banner-slide__content">
+                                <span class="impact-banner-slide__eyebrow">Produits &amp; Détail</span>
+                                <h2>La précision du détail,<br /><em>le service en plus</em></h2>
+                                <p>Profilés, quincaillerie, moustiquaires et accessoires: une offre complète pour accompagner vos chantiers avec réactivité et exigence.</p>
+                            </div>
+                            <div class="impact-banner-slide__rail">
+                                <a href="/about">Découvrir Impact Africa</a>
+                                <a href="/blog">Lire nos conseils chantier</a>
+                                <a href="/web/login?redirect=/my">Accéder à votre espace pro</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="impact-banner-carousel__controls o_not_editable" contenteditable="false">
+                    <button type="button" class="impact-banner-carousel__arrow" data-impact-prev="true" aria-label="Slide précédente">
+                        <iconify-icon icon="mdi:arrow-left"></iconify-icon>
+                    </button>
+                    <div class="impact-banner-carousel__dots" aria-label="Navigation du carousel">
+                        <button type="button" class="impact-banner-carousel__dot is-active" data-impact-dot="0" aria-current="true" aria-label="Aller au slide 1"></button>
+                        <button type="button" class="impact-banner-carousel__dot" data-impact-dot="1" aria-current="false" aria-label="Aller au slide 2"></button>
+                        <button type="button" class="impact-banner-carousel__dot" data-impact-dot="2" aria-current="false" aria-label="Aller au slide 3"></button>
+                    </div>
+                    <button type="button" class="impact-banner-carousel__arrow" data-impact-next="true" aria-label="Slide suivante">
+                        <iconify-icon icon="mdi:arrow-right"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

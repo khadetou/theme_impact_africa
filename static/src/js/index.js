@@ -73,10 +73,16 @@ if(homeContactForm){
 /* SMOOTH SCROLL */
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
+    const href=a.getAttribute('href')||'';
+    const id=href.slice(1);
+    const target=id?document.getElementById(id):null;
+    const isOdooUiLink=!!a.closest('#oe_main_menu_navbar,.o_main_navbar,.o_we_website_top_actions,.o_we_customize_panel,.modal,.dropdown-menu');
+    if(!id||!target||isOdooUiLink||a.getAttribute('role')==='button'||a.dataset.bsToggle){
+      return;
+    }
     e.preventDefault();
-    const id=a.getAttribute('href').slice(1);
-    if(id)document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
-    if(window.innerWidth<769)document.querySelector('.nav-links').style.display='';
+    target.scrollIntoView({behavior:'smooth'});
+    if(window.innerWidth<769)document.querySelector('.nav-links')?.style.setProperty('display','');
   });
 });
 

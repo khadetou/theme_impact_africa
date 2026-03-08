@@ -663,19 +663,19 @@
 }
 
 #wrapwrap.impact-africa-portal .impact-portal-invoices-table .o_portal_my_doc_table > :not(caption) > * > * {
-    padding: 18px 18px;
+    padding: 16px 16px;
     vertical-align: middle;
     background: transparent;
     border-bottom-color: rgba(16, 37, 44, 0.08);
 }
 
 #wrapwrap.impact-africa-portal .impact-portal-invoices-table .o_portal_my_doc_table thead th {
-    padding-top: 20px;
-    padding-bottom: 16px;
+    padding-top: 18px;
+    padding-bottom: 14px;
     color: #10252c;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     background: rgba(16, 37, 44, 0.03);
     border-bottom-color: rgba(16, 37, 44, 0.1);
@@ -691,9 +691,9 @@
 
 #wrapwrap.impact-africa-portal .impact-portal-invoices-table td[name='invoice_amount'] {
     color: #10252c;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 600;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     white-space: nowrap;
 }
 
@@ -705,7 +705,7 @@
 #wrapwrap.impact-africa-portal .impact-portal-invoices-table a[href*='/my/invoice/'],
 #wrapwrap.impact-africa-portal .impact-portal-invoices-table td:first-child a {
     color: #5e9319;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     text-decoration: none;
     transition: color 0.2s ease;
@@ -716,15 +716,15 @@
 }
 
 #wrapwrap.impact-africa-portal .impact-portal-invoices-table .badge.rounded-pill {
-    min-height: 34px;
-    padding: 0 14px;
+    min-height: 30px;
+    padding: 0 12px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
     border: 1px solid transparent;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
 }
 
 #wrapwrap.impact-africa-portal .impact-portal-invoices-table .badge.text-bg-success {
@@ -747,26 +747,39 @@
 }
 
 #wrapwrap.impact-africa-portal .impact-portal-invoices-table .btn.btn-sm.btn-primary {
-    min-height: 40px;
-    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: auto;
+    min-height: 34px;
+    padding: 0 12px;
     border: none;
-    border-radius: 999px;
+    border-radius: 16px;
     background: linear-gradient(135deg, #8bcf34 0%, #a9dc58 100%);
     color: #10252c;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
     text-transform: uppercase;
-    box-shadow: 0 12px 24px rgba(139, 207, 52, 0.18);
+    box-shadow: 0 8px 18px rgba(139, 207, 52, 0.14);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 #wrapwrap.impact-africa-portal .impact-portal-invoices-table .btn.btn-sm.btn-primary:hover {
     background: linear-gradient(135deg, #9ad94a 0%, #b8e56a 100%);
     color: #10252c;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(139, 207, 52, 0.18);
 }
 
 #wrapwrap.impact-africa-portal .impact-portal-invoices-table .btn.btn-sm.btn-primary .fa {
-    margin-right: 6px;
+    width: 16px;
+    margin-right: 0;
+    font-size: 12px;
+    line-height: 1;
 }
 
 @media (max-width: 1100px) {

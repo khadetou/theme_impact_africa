@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="160" viewBox="0 0 256 160" fill="none">
+  <rect width="256" height="160" rx="16" fill="#0B1820"/>
+  <rect x="0" y="0" width="256" height="160" rx="16" fill="url(#sky)"/>
+  <rect x="140" y="18" width="88" height="20" rx="2" fill="#0E6EB8"/>
+  <rect x="154" y="25" width="44" height="6" rx="3" fill="#FFF" opacity=".92"/>
+  <rect x="28" y="90" width="96" height="18" rx="4" fill="rgba(255,255,255,0.88)"/>
+  <rect x="28" y="112" width="62" height="18" rx="4" fill="rgba(255,255,255,0.88)"/>
+  <rect x="0" y="138" width="256" height="22" fill="rgba(11,24,32,0.56)"/>
+  <rect x="28" y="14" width="36" height="28" rx="3" fill="#0C1C22"/>
+  <rect x="136" y="26" width="52" height="82" fill="#DDD4CB"/>
+  <rect x="98" y="82" width="110" height="38" fill="#E6DED7"/>
+  <rect x="150" y="66" width="32" height="28" fill="#151515"/>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="256" y2="160" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7D88BD"/>
+      <stop offset=".56" stop-color="#BEC7EF"/>
+      <stop offset="1" stop-color="#F4F0EA"/>
+    </linearGradient>
+  </defs>
+</svg>

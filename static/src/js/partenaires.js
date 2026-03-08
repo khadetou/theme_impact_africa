@@ -29,3 +29,38 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
 function toggleDrawer(){const d=document.getElementById('drawer'),o=document.getElementById('drawerOverlay'),b=document.getElementById('hbgBtn');const open=d.classList.contains('open');if(open){closeDrawer();}else{d.classList.add('open');o.classList.add('open');b.classList.add('open');document.body.style.overflow='hidden';}}
 function closeDrawer(){const d=document.getElementById('drawer'),o=document.getElementById('drawerOverlay'),b=document.getElementById('hbgBtn');d.classList.remove('open');o.classList.remove('open');b.classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+
+/* PARTNER FILTER */
+function filterPartners(category, button) {
+  document.querySelectorAll('.pf-btn').forEach(btn => btn.classList.remove('active'));
+  if (button) {
+    button.classList.add('active');
+  }
+
+  document.querySelectorAll('.partner-card').forEach(card => {
+    const matches = category === 'all' || card.dataset.cat === category;
+    card.style.display = matches ? '' : 'none';
+  });
+}
+
+function initPartnerFilters() {
+  const filterButtons = document.querySelectorAll('.pf-btn[data-partner-filter]');
+  if (!filterButtons.length) {
+    return;
+  }
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      filterPartners(button.dataset.partnerFilter || 'all', button);
+    });
+  });
+
+  const activeButton = document.querySelector('.pf-btn[data-partner-filter].active') || filterButtons[0];
+  if (activeButton) {
+    filterPartners(activeButton.dataset.partnerFilter || 'all', activeButton);
+  }
+}
+
+initPartnerFilters();
+
+window.filterPartners = filterPartners;

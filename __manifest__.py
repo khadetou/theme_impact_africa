@@ -24,6 +24,7 @@
         "views/footer_templates.xml",
         "views/login_templates.xml",
         "views/portal.xml",
+        "views/snippets.xml",
         "views/blog_cleanup.xml",
         "views/blog_native_templates.xml",
         "views/impact_africa_homepage.xml",
@@ -37,8 +38,10 @@
     "assets": {
         "web.assets_frontend": [
             "theme_impact_africa/static/src/scss/common.scss",
+            "theme_impact_africa/static/src/scss/snippets.scss",
             "theme_impact_africa/static/src/scss/portal.scss",
             "theme_impact_africa/static/src/js/common.js",
+            "theme_impact_africa/static/src/js/snippets.js",
         ],
         "web._assets_primary_variables": [
             "theme_impact_africa/static/src/scss/primary_variables.scss",
